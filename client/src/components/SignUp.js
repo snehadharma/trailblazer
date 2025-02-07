@@ -14,10 +14,10 @@ function SignUp() {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await createUserWithEmailAndPassword(auth, email.toString(), password.toString());
+      await createUserWithEmailAndPassword(auth, email, password);
       const user = auth.currentUser;
       if (user) {
-        await setDoc(doc(db, user, user.uid), {
+        await setDoc(doc(db, "Users", user.uid), {
           email: user.email, 
           firstName: fname,
           lastName: lname,
@@ -29,7 +29,7 @@ function SignUp() {
       navigate('/');
     } catch (error) {
       alert(error.message);
-      console.log("error encountered on sign up");
+      console.log("Sign up error:", error);
     }
   };
 
