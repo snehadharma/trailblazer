@@ -1,21 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './components/log_in';
-import Signup from './components/sign_up';
-import Home from './components/home';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import LogIn from './components/LogIn';
+import SignUp from './components/SignUp';
+import Home from './components/Home';
 
 
 function App() {
   return (
-    <><p>hello world</p>
+    
     <Router>
+      <p>hello world</p>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/login">Log in</Link>
+        <Link to="/signup">Sign Up</Link>
+      </nav>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/" element={<Home />} />
       </Routes>
-    </Router></>
+    </Router>
   );
 }
 
