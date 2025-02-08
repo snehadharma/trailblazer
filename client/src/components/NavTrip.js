@@ -23,6 +23,18 @@ const location = useLocation();
   //   getDirections(itinerary, setDirections);
   // };
 
+  const handleSaveTrip = () => {
+
+  }
+
+  const handleEditPrompt = () => {
+
+  }
+
+  const handleRegenerate = () => {
+    
+  }
+
   useEffect(() => {
     if (prompt) {
       const fetchTrip = async () => {
@@ -43,21 +55,20 @@ const location = useLocation();
     }
   }, [prompt]); // Runs whenever `prompt` changes
 
-  const containerStyle = {
-    width: '100%',
-    height: '400px',
-  };
 
   return (
     <div>
       <Header />
       <h1>Yeehaw! Here are your trip details!</h1>
+      <button onClick={handleSaveTrip}>save</button>
+      <button onClick={handleRegenerate}>regenerate</button>
+      <button onClick={handleEditPrompt}>edit</button>
       {/* <TripPlanner /> */}
       {/* <GoogleMapComponent /> */}
 
-      <div style={{ display: "flex", gap: "20px" }}>
+      <div>
         {/* Left Side: Itinerary */}
-        <div style={{ width: "50%" }}>
+        <div>
           {/* {cities.length > 0 && (
           <ul>
             {cities.map((city, index) => (
@@ -71,7 +82,7 @@ const location = useLocation();
         </div>
 
         {/* Right Side: Map */}
-        <div style={{ width: "50%" }}>
+        <div>
           {/* <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
           <GoogleMap mapContainerStyle={containerStyle} center={{ lat: 31.9686, lng: -99.9018 }} zoom={6}>
             {directions && <DirectionsRenderer directions={directions} />}
