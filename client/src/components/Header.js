@@ -9,9 +9,9 @@ function Header () {
         <div className={styles.trailblazer}>trailblazer</div>
         
         <div className = {styles.container}>
-          <Link to="/LogIn" className={styles.logIn}>log in</Link>
-          <Link to="/SignUp" className={styles.signUp}>sign up</Link>
-          <Link to="/Home" className={styles.home}>home</Link>
+            <Link to="/Home" className={styles.home}>home</Link>
+            <Link to="/LogIn" className={styles.logIn}>log in</Link>
+            <Link to="/SignUp" className={styles.signUp}>sign up</Link>
         </div>
 
       </div>)
