@@ -4,7 +4,10 @@ import Header from './TrailBlazerLoggedIn/Header';
 function GenerateTrip() {
   return (
     <div>
-      < Header />
+        < Header />
+        <h1>Yeehaw! Here's your trip details!</h1>
+        <TripPlanner />
+        <GoogleMapComponent />
     </div>
   );
 }
