@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     height: 100vh;
     background-color: #e3d4c8;
 }
@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: column;
     width: 45%;
-    height: 80%;
+    height: 70%;
 }
 
 .title {
@@ -28,7 +28,7 @@
 }
 
 .input-container {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
 }
@@ -37,7 +37,7 @@
     color: #af7746;
     font-family: 'Fustat';
     margin-bottom: 8px;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -58,7 +58,7 @@
     border-radius: 15px;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .link {
