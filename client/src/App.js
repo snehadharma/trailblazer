@@ -14,7 +14,6 @@ function App() {
   return (
     
     <Router>
-      <p>app component take this out</p>
       {/* <nav>
         
         <Link to="/">Home</Link>
