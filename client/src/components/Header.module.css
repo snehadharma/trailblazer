@@ -12,23 +12,29 @@
 }
 .logIn {
     font-size: 20px;
+    color: white;
+    text-decoration: none;
     font-family: 'Fustat';
     display: inline-block;
 }
 
 .signUp {
     font-size: 20px;
+    color: white;
+    text-decoration: none;
     display: inline-block;
 }
 .home {
     font-size: 20px;
+    color: white;
+    text-decoration: none;
     display: inline-block;
 }
 
 .header {
     width: 90%;
     position: relative;
-    border-radius: 15px;
+    border-radius: 30px;
     margin: 20px;
     padding: 10px;
     background-color: #af7746;
