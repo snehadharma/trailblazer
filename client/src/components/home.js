@@ -3,11 +3,13 @@ import Header from './Header';
 import cactiImage from "../assets/cacti.png";
 import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
+import { motion } from "framer-motion";
 
 
 const Home = () => {	
   
   	return (
+      <motion.div exit={{ opacity: 0 }}>
       <div>
         <Header />  {Header}
         <div className={styles.container}>
@@ -18,6 +20,7 @@ const Home = () => {
           <img className={styles.img} src={cactiImage} alt="Cacti" />
         </div>
     </div>
+    </motion.div>
     )
     		
 };

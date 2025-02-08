@@ -1,5 +1,6 @@
 //import logo from './logo.svg';
 import "./App.css";
+import { AnimatePresence, motion} from "framer-motion";
 import {
   BrowserRouter as Router,
   Routes,
@@ -25,18 +26,34 @@ function App() {
         <Link to="/login">Log in</Link>
         <Link to="/signup">Sign Up</Link>
       </nav> */}
+      <AnimatePresence exitBeforeEnter>
       <Routes>
-        <Route path="/" element={<Navigate to="/home" replace />} />
+      <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/trailblazer/account" element={<Account />} />
+        <Route
+            path="/home"
+            element={
+              <motion.div
+                key="/home"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1 }}
+              >
+                <Home />
+              </motion.div>
+            }
+          />
+         <Route path="/trailblazer/account" element={<Account />} />
         <Route path="/trailblazer" element={<TrailBlazerLoggedin />} />
         <Route path="/trailblazer/generatetrip" element={<GenerateTrip />} />
         <Route path="/trailblazer/discover" element={<Discover />} />
         <Route path="/trailblazer/navtrip" element={<NavTrip />} />
       </Routes>
+      </AnimatePresence>
     </Router>
+    
   );
 }
 

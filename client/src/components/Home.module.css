@@ -48,6 +48,7 @@
 }
 
 .img {
+    animation: fadeIn 3s ease-in-out, bounce 1s ease-in-out 2;
     position: fixed;
     max-width: 300px;
     width: 25%;
