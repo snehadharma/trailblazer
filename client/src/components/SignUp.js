@@ -61,8 +61,8 @@ function SignUp() {
           />
         </div>
 
-        <div>
-          <label>Username</label>
+        <div className="input-container">
+          <label className="label">Username</label>
           <input
             type="text"
             className="input"
@@ -94,8 +94,8 @@ function SignUp() {
           />
         </div>
 
-        
-        
+
+
 
         <button type="submit" className="button">Sign Up</button>
         <p>
