@@ -34,11 +34,8 @@ function SignUp() {
 
   return (
     <div>
-      <Header /> {Header}
-<<<<<<< HEAD
+      <Header /> {Header};
     <div className="container">
-=======
->>>>>>> e862cc7c49c5946c53ecfc2bf361110cc2b22e9b
       <form className="form" onSubmit={handleSignup}>
           <h2 className="title">Create a new account!</h2>
         <div className="input-container">
