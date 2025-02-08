@@ -12,7 +12,7 @@ function LogIn() {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate('/');
+      navigate('/trailblazer/account');
     } catch (error) {
       alert(error.message);
     }
@@ -20,34 +20,36 @@ function LogIn() {
 
   return (
     <div>
-      <h2>Login</h2>
-      <div className = "email-login">
-        <label>Email Address</label>
-        <input
-            type = "email"
-            className = "form-control"
-            placeholder = "enter email here"
-            value = { email }
-            onChange = {(e) => setEmail(e.target.value)}
-        />
-      </div>
+      <form onSubmit={handleLogin}> 
+        <h2>Login</h2>
+        <div className = "email-login">
+          <label>Email Address</label>
+          <input
+              type = "email"
+              className = "form-control"
+              placeholder = "enter email here"
+              value = { email }
+              onChange = {(e) => setEmail(e.target.value)}
+          />
+        </div>
 
-      <div className = "pw-login">
-        <label>Password</label>
-        <input
-            type = "password"
-            className = "form-control"
-            placeholder = "enter password here"
-            value = { password }
-            onChange = {(e) => setPassword(e.target.value)}
-        />
-      </div>
+        <div className = "pw-login">
+          <label>Password</label>
+          <input
+              type = "password"
+              className = "form-control"
+              placeholder = "enter password here"
+              value = { password }
+              onChange = {(e) => setPassword(e.target.value)}
+          />
+        </div>
 
-      <div>
-        <button type="submit" className = "submit_button">
-            submit
-        </button>
-      </div>
+        <div>
+          <button type="submit" className = "submit_button">
+              submit
+          </button>
+        </div>
+      </form>
       
        <p>
         Don't have an account? <a href="/signup">Sign up</a>

@@ -26,7 +26,7 @@ function SignUp() {
       console.log(user);
       console.log("Email:", email, "Password:", password);
       console.log("Type of email:", typeof email, "Type of password:", typeof password);
-      navigate('/');
+      navigate('/trailblazer/account');
     } catch (error) {
       alert(error.message);
       console.log("Sign up error:", error);
