@@ -5,7 +5,7 @@ function Discover() {
   return (
 
     <div>
-      < Header />
+      < Header /> {Header}
     </div>
   );
 }

@@ -14,7 +14,7 @@ const Home = () => {
           <div className={styles.paragraph}>welcome to...</div>
           <div className={styles.title}>Trailblazer</div>
           <div className={styles.paragraph}>an all-in-one texas road trip planner, fitted with an ai assistant.</div>
-          <Link to="/GenerateTrip" className={styles.button}>get started here!</Link>
+          <Link to="../Trailblazer/GenerateTrip" className={styles.button}>get started here!</Link>
           <img className={styles.img} src={cactiImage} alt="Cacti" />
         </div>
     </div>

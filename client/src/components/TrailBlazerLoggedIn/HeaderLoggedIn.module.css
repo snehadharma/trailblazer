@@ -2,19 +2,20 @@
     position: absolute;
     top: 2px;
     left: 28px;
-    color: white;
-    text-decoration: none;
     font-family: 'Like A Rope';
     padding: 5px;
     font-size: 40px;
+    color: white;
+    text-decoration: none;
     text-align: left;
     display: inline;
     width: 110.6px;
     height: 18px;
 }
-.logIn, .signUp, .home {
+.generateTrip, .discover, .account {
     font-size: 20px;
     color: white;
+    white-space: nowrap;
     text-decoration: none;
     font-family: 'Fustat';
     padding: 5px 20px;
@@ -22,7 +23,7 @@
     display: inline-block;
 }
 
-.home:hover, .logIn:hover, .signUp:hover {
+.generateTrip:hover, .discover:hover, .account:hover {
     background-color: #0E4A6C;
     box-sizing: border-box;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -51,7 +52,7 @@
     justify-content: space-between;
     align-items: center;
     width: 40%;
-    padding: 10px;
+    padding: 0px;
     margin-left: auto;
 }
 
