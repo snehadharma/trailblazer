@@ -3,7 +3,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from './firebase';
 import { useNavigate } from 'react-router-dom';
 import { setDoc, doc } from 'firebase/firestore';
-import cactusImage from '../assets/cacti.png'; 
+import cactusImage from '../assets/cacti.png';
 import Header from './Header';
 import './SignUp.css';
 
@@ -33,9 +33,10 @@ function SignUp() {
   };
 
   return (
-    <div className="container">
+    <div>
       <Header /> {Header}
-      <formsign className="form" onSubmit={handleSignup}>
+    <div className="container">
+      <form className="form" onSubmit={handleSignup}>
           <h2 className="title">Create a new account!</h2>
         <div className="input-container">
           <label className="label">First name</label>
@@ -85,8 +86,9 @@ function SignUp() {
         <p>
           Already have an account? <a href="/login" className="link">Login</a>
         </p>
-      </formsign>
+      </form>
       <img src={cactusImage} alt="Cactus" className="img" />
+    </div>
     </div>
   );
 }

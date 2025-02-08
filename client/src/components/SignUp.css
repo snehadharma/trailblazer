@@ -10,15 +10,16 @@
 
 .form {
     background-color: #eef0eb;
-    margin-bottom: 5px;
+    margin-top: 7%;
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 35%;
     height: 70%;
 }
+
 
 .title {
     color: #af7746;

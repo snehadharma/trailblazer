@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 import styles from './Account.module.css';
+import './Account.module.css';
 import { auth, db } from '../firebase';
 import { getDoc, doc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import Header from '../TrailBlazerLoggedIn/HeaderLoggedIn';
+import pfpImage from '../../assets/pfp.png'; // Going up two levels to access 'assets'
+
 
 function Account() {
   const [userDetails, setUserDetails] = useState(null);
@@ -52,25 +55,28 @@ function Account() {
 
   return (
     <div>
-      < Header />
+      <Header />
       {userDetails ? (
         <>
-          <h3>Welcome {userDetails.firstName}</h3>
-          <div>
-            <p>Email: {userDetails.email}</p>
-            <p>First name: {userDetails.firstName}</p>
-            <p>Last name: {userDetails.lastName}</p>
+          <div className={styles['account-info']}>
+          <img className={styles['profile-pic']} src={pfpImage} alt="PFP" />
+            <div className={styles['account-details']}>
+              <h3 className= {styles['account-name']}> {userDetails.firstName} {userDetails.lastName}</h3>
+              <h3 className= {styles['account-email']}>  {userDetails.email} </h3>
+            </div>
+            <button onClick={handleLogout} className={styles['logout-button']}>
+              Logout
+            </button>
           </div>
-          <button onClick={handleLogout}>
-            Logout
-          </button>
+
+          <div className={styles['trips-box']}>
+            <h3 className={styles['trips-title']}>My Trips!</h3>
+          </div>
         </>
       ) : (
         <p>Loading...</p>
       )}
     </div>
-
-
   );
 }
 

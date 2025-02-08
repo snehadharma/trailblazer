@@ -1,1 +1,97 @@
-.Account {}
+.account-info {
+    display: flex;
+    justify-content: flex-start;  /* Align both the image and details to the left */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .profile-container {
+    display: flex;
+    align-items: center;
+    border-radius: 100%;
+  }
+
+  .profile-pic {
+    width: 145px;         /* Adjust the size of the profile picture */
+    height: 145px;        /* Ensure the height matches the width */
+    border-radius: 100%;   /* Make the image circular */
+    object-fit: cover;    /* Ensures the image scales correctly */
+    margin-right: 0px;   /* Space between the image and the user details */
+    margin-left: 100px;
+    margin-top: 60px;
+  }
+
+  .account-details {
+    margin-left: 30px;  /* Check if this needs adjusting */
+    margin-right: 0px;  /* Ensure no unnecessary space on the right */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .account-name {
+    margin-left: 0px;  /* Check if this needs adjusting */
+    margin-top: 50px;
+    font-size: 30px;
+    display: flex;
+    font-family: 'Fustat';
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom:0;
+    color: #9f663d;
+  }
+
+  .account-email {
+    margin-left: 0px;  /* Check if this needs adjusting */
+    margin-right: 0px;  /* Ensure no unnecessary space on the right */
+    margin-top: 5px;
+    display: flex;
+    font-family: 'Fustat';
+    flex-direction: column;
+    align-items: flex-start;
+    color: #9f663d;
+  }
+
+
+  .logout-button {
+    background-color: #AF7746;
+    color: white;
+    font-size: 20px;
+    font-family: 'Fustat';
+    padding: 15px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    margin-right: 200px;
+    margin-top: 20px;
+
+  }
+
+  .logout-button:hover {
+    background-color: #9f663d;
+  }
+
+  .trips-box {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Fustat';
+    width: 80%;
+    min-height: 250px;
+    background-color: #EEF0EB;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .trips-title {
+    font-size: 24px;
+    font-family: 'Fustat';
+    font-weight: bold;
+    color: #AF7746; /* Orange color for the text */
+    margin: 0; /* Remove margin to keep it tight */
+  }
