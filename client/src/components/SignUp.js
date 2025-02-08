@@ -26,7 +26,7 @@ function SignUp() {
           lastName: lname,
         });
       }
-      navigate('/trailblazer');
+      navigate('/trailblazer/account');
     } catch (error) {
       alert(error.message);
     }
@@ -35,7 +35,7 @@ function SignUp() {
   return (
     <div className="container">
       <Header /> {Header}
-      <formsign className="form" onSubmit={handleSignup}>
+      <form className="form" onSubmit={handleSignup}>
           <h2 className="title">Create a new account!</h2>
         <div className="input-container">
           <label className="label">First name</label>
@@ -85,7 +85,7 @@ function SignUp() {
         <p>
           Already have an account? <a href="/login" className="link">Login</a>
         </p>
-      </formsign>
+      </form>
       <img src={cactusImage} alt="Cactus" className="img" />
     </div>
   );
