@@ -67,3 +67,16 @@
     text-decoration: none;
     font-weight: bold;
   }
+
+  .cactus-container {
+    position: absolute;
+    bottom: 0px; /* Adjust the value as needed */
+    width: 100%;
+    display: flex;
+    justify-content: left; /* Center the image horizontally */
+  }
+
+  .cactus-image {
+    max-width: 400px;
+    height: auto;
+  }

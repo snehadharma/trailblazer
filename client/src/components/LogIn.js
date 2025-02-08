@@ -3,6 +3,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from './firebase';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
+import cactusImage from '../assets/cacti.png'; // Import the image
 import './LogIn.css'; // Import the correct CSS file
 
 function LogIn() {
@@ -51,6 +52,9 @@ function LogIn() {
           Don't have an account? <a href="/signup" className="login-link">Sign up</a>
         </p>
       </form>
+      <div className="cactus-container">
+        <img src={cactusImage} alt="Cactus" className="cactus-image" />
+      </div>
     </div>
   );
 }
