@@ -6,10 +6,20 @@
     color: #6EA2C4;
 }
 
+.paragraphBounce{
+    font-family: Fustat;
+    animation: bounce 1s ease-in-out 1;
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+    color: #6EA2C4;
+}
+
 .title {
     font-family: 'Like A Rope';
     text-align: center;
     font-size: 150px;
+    animation: fadeIn 2s ease-in-out, slideIn 1s ease-out;
     padding: 20px;
     color: #AF7746;
 }
@@ -45,3 +55,30 @@
     left: -50px;
     height:auto;
 }
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
