@@ -17,6 +17,7 @@ function NavTrip() {
   const [cities, setCities] = useState([]);
   const [descriptions, setDescriptions] = useState([]);
   const [directions, setDirections] = useState(null);
+  const [itinerary, setItinerary] = useState();
 
   const prompt = location.state.userPrompt; // Extract userPrompt from state
   // const handleGenerateTrip = async () => {
@@ -52,7 +53,7 @@ function NavTrip() {
       const fetchTrip = async () => {
         console.log(prompt);
         // const itinerary = await getRoadTripIdeas(prompt);
-        const itinerary = [
+        const it = [
           {
             city: "San Antonio",
             description:
@@ -84,11 +85,12 @@ function NavTrip() {
               "End your journey where you started and enjoy one last delicious meal of traditional Mexican food in San Antonio.",
           },
         ];
+        setItinerary(it);
 
-        console.log("Itinerary received:", itinerary); // Debug log
+        console.log("Itinerary received:", it); // Debug log
 
-        const cityArr = extractCities(itinerary);
-        const descrArr = extractDescriptions(itinerary);
+        const cityArr = extractCities(it);
+        const descrArr = extractDescriptions(it);
         console.log("city array: " + cityArr);
         setCities(cityArr);
 
@@ -119,16 +121,16 @@ function NavTrip() {
       <div>
         {/* Left Side: Itinerary */}
         <div>
-          {/* {cities.length > 0 && (
-          <ul>
-            {cities.map((city, index) => (
-              <li key={index}>
-                <h3>{city.city}</h3>
-                <p>{city.description}</p>
-              </li>
-            ))}
-          </ul>
-        )} */}
+          {cities.length > 0 && (
+            <ul>
+              {cities.map((city, index) => (
+                <li key={index}>
+                  <h3>{city}</h3>
+                  <p>{descriptions[index]}</p>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
 
         {/* Right Side: Map */}
