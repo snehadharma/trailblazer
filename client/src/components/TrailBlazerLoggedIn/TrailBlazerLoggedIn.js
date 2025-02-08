@@ -1,15 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './TrailBlazerLoggedIn.module.css';
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
+import Header from './Header';
 
-const TrailBlazerLoggedIn = () => (
-  <div className={styles.TrailBlazerLoggedIn}>
-    TrailBlazerLoggedIn Component put nav bar here
-  </div>
-);
-
-TrailBlazerLoggedIn.propTypes = {};
-
-TrailBlazerLoggedIn.defaultProps = {};
+function TrailBlazerLoggedIn() {
+  return (
+    <div>
+      <Header />
+    </div>
+  );
+}
 
 export default TrailBlazerLoggedIn;

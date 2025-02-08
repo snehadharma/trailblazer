@@ -13,7 +13,7 @@ function LogIn() {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate('/trailblazer/account');
+      navigate('/trailblazer');
     } catch (error) {
       alert(error.message);
     }

@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "generate-react-cli": "^8.4.9"
+    "generate-react-cli": "^8.4.9",
+    "react-native-web": "^0.19.13"
   }
 }

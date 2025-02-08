@@ -4,6 +4,7 @@ import styles from './Account.module.css';
 import { auth, db } from '../firebase';
 import { getDoc, doc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
+import Header from '../TrailBlazerLoggedIn/Header';
 
 function Account() {
   const [userDetails, setUserDetails] = useState(null);
@@ -51,6 +52,7 @@ function Account() {
 
   return (
     <div>
+      < Header />
       {userDetails ? (
         <>
           <h3>Welcome {userDetails.firstName}</h3>

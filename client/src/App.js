@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
 import LogIn from './components/LogIn';
@@ -27,9 +27,9 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/home" element={<Home />} />
         <Route path='/trailblazer/account' element={<Account />} />
-        <Route path='/trailblazer' element={<TrailBlazerLoggedin />} />
+        <Route path='/trailblazer' element={<TrailBlazerLoggedin/>} />
         <Route path='/trailblazer/generatetrip' element={<GenerateTrip />} />
-        <Route path='/trailblazer/discover' element={<TrailBlazerLoggedin />} />
+        <Route path='/trailblazer/discover' element={<Discover />} />
       </Routes>
     </Router>
   );
