@@ -9,9 +9,9 @@ function Header () {
         <div className={styles.trailblazer}>trailblazer</div>
         
         <div className = {styles.container}>
-            <Link to="../GenerateTrip" className={styles.generateTrips}>generate trips</Link>
-            <Link to="../Discover" className={styles.discover}>discover</Link>
-            <Link to="../Account/Account" className={styles.account}>account</Link>
+            <Link to="../Trailblazer/GenerateTrip" className={styles.generateTrip}>generate trips</Link>
+            <Link to="../Trailblazer/Discover" className={styles.discover}>discover</Link>
+            <Link to="../Trailblazer" className={styles.account}>account</Link>
         </div>
 
       </div>)
