@@ -6,7 +6,7 @@ import '../../App.css';
 function Header () {	
     return (
       <div className={styles.header}>
-        <Link to="/Home" className={styles.trailblazer}>trailblazer</Link>
+        <Link to="/Trailblazer/GenerateTrip" className={styles.trailblazer}>trailblazer</Link>
         
         <div className = {styles.container}>
             <Link to="../Trailblazer/GenerateTrip" className={styles.generateTrip}>generate trips</Link>
