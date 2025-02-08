@@ -1,38 +1,42 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+// import React, { useState } from "react";
+// import { GoogleMap, LoadScript, DirectionsRenderer } from "@react-google-maps/api";
+// import { getDirections } from "../api/mapService";
+// import { getRoadTripIdeas } from "../api/aiService";
 
-// const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+// const containerStyle = { width: "50vw", height: "500px" };
 
-// const cities = ["Austin, TX", "Dallas, TX", "Houston, TX"];
+// const TripPlanner = () => {
+//   const [userPrompt, setUserPrompt] = useState("");
+//   const [cities, setCities] = useState([]);
+//   const [directions, setDirections] = useState(null);
 
-const TripPlanner = () => {
-  // const [route, setRoute] = useState(null);
+//   return (
+//     <div style={{ display: "flex", gap: "20px" }}>
+//       {/* Left Side: Itinerary */}
+//       <div style={{ width: "50%" }}>
 
-  // useEffect(() => {
-  //   const fetchDirections = async () => {
-  //     try {
-  //       const origin = cities[0];
-  //       const destination = cities[cities.length - 1];
-  //       const waypoints = cities.slice(1, -1).join("|");
+//         {/* {cities.length > 0 && (
+//           <ul>
+//             {cities.map((city, index) => (
+//               <li key={index}>
+//                 <h3>{city.city}</h3>
+//                 <p>{city.description}</p>
+//               </li>
+//             ))}
+//           </ul>
+//         )} */}
+//       </div>
 
-  //       const url = `https://maps.googleapis.com/maps/api/directions/json?origin=${origin}&destination=${destination}&waypoints=${waypoints}&key=${API_KEY}`;
+//       {/* Right Side: Map */}
+//       <div style={{ width: "50%" }}>
+//         {/* <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
+//           <GoogleMap mapContainerStyle={containerStyle} center={{ lat: 31.9686, lng: -99.9018 }} zoom={6}>
+//             {directions && <DirectionsRenderer directions={directions} />}
+//           </GoogleMap>
+//         </LoadScript> */}
+//       </div>
+//     </div>
+//   );
+// };
 
-  //       const response = await axios.get(url);
-  //       setRoute(response.data);
-  //     } catch (error) {
-  //       console.error("Error fetching directions:", error);
-  //     }
-  //   };
-
-  //   fetchDirections();
-  // }, []);
-
-  return (
-    <div>
-      <h2>Trip Route</h2>
-      {/* {route ? <pre>{JSON.stringify(route, null, 2)}</pre> : <p>Loading route...</p>} */}
-    </div>
-  );
-};
-
-export default TripPlanner;
+// export default TripPlanner;

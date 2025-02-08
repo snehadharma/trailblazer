@@ -15,7 +15,7 @@ function LogIn() {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate('/trailblazer');
+      navigate('/trailblazer/generatetrip');
     } catch (error) {
       alert(error.message);
     }
