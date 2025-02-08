@@ -9,7 +9,6 @@ import { motion } from "framer-motion";
 const Home = () => {	
   
   	return (
-      <motion.div exit={{ opacity: 0 }}>
       <div>
         <Header />  {Header}
         <div className={styles.container}>
@@ -17,10 +16,9 @@ const Home = () => {
           <div className={styles.title}>Trailblazer</div>
           <div className={styles.paragraph}>an all-in-one texas road trip planner, fitted with an ai assistant.</div>
           <Link to="../LogIn" className={styles.button}>get started here!</Link>
-          <img className={styles.img} src={cactiImage} alt="Cacti" />
         </div>
+        <img className={styles.img} src={cactiImage} alt="Cacti" />
     </div>
-    </motion.div>
     )
     		
 };

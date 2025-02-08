@@ -1,26 +1,23 @@
 .paragraph{
     font-family: Fustat;
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
-    padding: 20px;
     color: #6EA2C4;
 }
 
 .paragraphBounce{
     font-family: Fustat;
     animation: bounce 1s ease-in-out 1;
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
-    padding: 20px;
     color: #6EA2C4;
 }
 
 .title {
     font-family: 'Like A Rope';
     text-align: center;
-    font-size: 150px;
+    font-size: 180px;
     animation: fadeIn 2s ease-in-out, slideIn 1s ease-out;
-    padding: 20px;
     color: #AF7746;
 }
 
@@ -29,22 +26,22 @@
     padding: 50px;
     position: relative;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     height: 50vh;
 }
 
 .button {
-    font-size: 20px;
     color: white;
     text-decoration: none;
     font-family: 'Fustat';
-    padding: 5px 20px;
+    margin-top: 30px;
+    padding: 8px 25px;
     border-radius: 30px;
     display: inline-block;
     border-radius: 30px;
     background-color: #0E4A6C;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .img {
