@@ -4,7 +4,7 @@ import styles from './Account.module.css';
 import { auth, db } from '../firebase';
 import { getDoc, doc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
-import Header from '../TrailBlazerLoggedIn/Header';
+import Header from '../TrailBlazerLoggedIn/HeaderLoggedIn';
 
 function Account() {
   const [userDetails, setUserDetails] = useState(null);
@@ -21,7 +21,7 @@ function Account() {
         console.log("Authenticated user:", user);
         const docRef = doc(db, "Users", user.uid);
         const docSnap = await getDoc(docRef);
-        
+
         if (docSnap.exists()) {
           setUserDetails(docSnap.data());
         } else {
@@ -69,8 +69,8 @@ function Account() {
         <p>Loading...</p>
       )}
     </div>
-      
-      
+
+
   );
 }
 

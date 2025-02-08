@@ -3,6 +3,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from './firebase';
 import { useNavigate } from 'react-router-dom';
 import { setDoc, doc } from 'firebase/firestore';
+import './SignUp.css'; // Import SignUp-specific styles
 
 function SignUp() {
   const [email, setEmail] = useState('');
@@ -18,78 +19,71 @@ function SignUp() {
       const user = auth.currentUser;
       if (user) {
         await setDoc(doc(db, "Users", user.uid), {
-          email: user.email, 
+          email: user.email,
           firstName: fname,
           lastName: lname,
         });
       }
-      console.log(user);
-      console.log("Email:", email, "Password:", password);
-      console.log("Type of email:", typeof email, "Type of password:", typeof password);
       navigate('/trailblazer');
     } catch (error) {
       alert(error.message);
-      console.log("Sign up error:", error);
     }
   };
 
   return (
-    <div>
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSignup}>
+    <div className="container">
+      <form className="form" onSubmit={handleSignup}>
 
-        <label>First name</label>
-        <div className="first_name"> 
+
+        <div className="input-container">
+          <label className="label">First name</label>
           <input
             type="text"
-            placeholder="first name"
+            className="input"
+            placeholder="First name"
             value={fname}
             onChange={(e) => setFirstName(e.target.value)}
           />
         </div>
 
-        <label>Last name</label>
-        <div className="last_name"> 
+        <div className="input-container">
+          <label className="label">Last name</label>
           <input
             type="text"
-            placeholder="last name"
+            className="input"
+            placeholder="Last name"
             value={lname}
             onChange={(e) => setLastName(e.target.value)}
           />
         </div>
 
-        <label>Email</label>
-        <div className="email">
+        <div className="input-container">
+          <label className="label">Email</label>
           <input
             type="email"
+            className="input"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
-        <label>Password</label>
-        <div className="pw"> 
+        <div className="input-container">
+          <label className="label">Password</label>
           <input
             type="password"
+            className="input"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
 
-        <div>
-          <button type="submit" className = "submit_button">
-              submit
-          </button>
-        </div>
-
+        <button type="submit" className="button">Sign Up</button>
       </form>
 
-      
-
       <p>
-        Already have an account? <a href="/login">Login</a>
+        Already have an account? <a href="/login" className="link">Login</a>
       </p>
     </div>
   );

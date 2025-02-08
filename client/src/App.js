@@ -12,10 +12,10 @@ import Discover from './components/Discover';
 
 function App() {
   return (
-    
+
     <Router>
       {/* <nav>
-        
+
         <Link to="/">Home</Link>
         <Link to="/login">Log in</Link>
         <Link to="/signup">Sign Up</Link>
