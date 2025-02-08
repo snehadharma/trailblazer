@@ -1,17 +1,13 @@
 import React from "react";
-import styles from './Home.module.css';
-import '../App.css';
+import Header from './Header';
 
 const Home = () => {	
   	return (
-      <div className={styles.header}>
-        <div className={styles.trailblazer}>trailblazer</div>
-        <div className={styles.logIn}>log in</div>
-        <div className={styles.signUp}>sign up</div>
-        <div className={styles.active}>
-        <div className={styles.home}>home</div>
-        </div>
-      </div>)
+      <div>
+      <Header />  {Header}
+      <p>Welcome to the Home Page!</p>
+    </div>
+    )
     		
 };
 
