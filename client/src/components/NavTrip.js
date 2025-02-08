@@ -9,8 +9,9 @@ import {
   DirectionsRenderer,
 } from "@react-google-maps/api";
 import Header from "./TrailBlazerLoggedIn/HeaderLoggedIn";
-import TripFetcher from "./TripFetcher";
-import { LoadScript } from "@react-google-maps/api";
+import { auth, db } from "./firebase";
+import { doc, updateDoc, setDoc, getDoc, arrayUnion } from "firebase/firestore";
+
 
 function NavTrip() {
   // Your API key for Google Maps
@@ -32,8 +33,44 @@ function NavTrip() {
   //   getDirections(itinerary, setDirections);
   // };
 
-  const handleSaveTrip = () => {
-    
+  const handleSaveTrip = async () => {
+    try {
+      const user = auth.currentUser;
+      if (!user) {
+        alert("User not logged in");
+        return;
+      }
+
+      const userRef = doc(db, "Users", user.uid);
+      const userDoc = await getDoc(userRef);
+
+      let existingTrips = userDoc.exists() ? userDoc.data().roadTrips || [] : [];
+
+      if (currentTripId) {
+        // **Update the existing trip’s itinerary**
+        const updatedTrips = existingTrips.map((trip) =>
+          trip.id === currentTripId ? { ...trip, itinerary } : trip
+        );
+
+        await updateDoc(userRef, { roadTrips: updatedTrips });
+        alert("Itinerary updated!");
+      } else {
+        // **Save as a new trip**
+        const newTripId = Date.now().toString(); // Generate a unique trip ID
+        const newTrip = { id: newTripId, itinerary };
+
+        await updateDoc(userRef, { roadTrips: arrayUnion(newTrip) });
+
+        // **Store the new trip ID in state & localStorage**
+        setCurrentTripId(newTripId);
+        localStorage.setItem("currentTripId", newTripId);
+
+        alert("New trip saved!");
+      }
+    } catch (error) {
+      console.error("Error saving itinerary:", error);
+      alert("Failed to save itinerary.");
+    }
   }
 
   const handleEditPrompt = () => {};
