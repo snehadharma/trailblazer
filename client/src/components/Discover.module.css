@@ -1,0 +1,77 @@
+.rectangle {
+    padding: 10px;
+    display: flex;
+    background-color: #EEF0EB;
+    width: 95%;
+    height: 50vw;
+    position: relative;
+    border-radius: 30px;
+    margin: 20px 20px auto;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+.subRect{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.trip {
+    width: 25%;
+    height: 24vw;
+    background-color: rgba(175, 119, 70, 0.46);
+    border-radius: 25px;
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: all opacity 0.3s ease;
+}
+
+.trip img {
+    width: 120%;
+    height: auto;
+}
+
+.trip hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.trip::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(175, 119, 70, 0.60);
+    z-index: 1;
+    opacity: 0.4; 
+    transition: opacity 0.3s ease;
+  }
+  
+  .trip:hover::before {
+    opacity: 1; /* Show overlay on hover */
+  }
+
+
+
+  .trip::after {
+    content: attr(data-description); 
+    position: absolute;
+    bottom: 10px; 
+    left: 10px; 
+    color: white;
+    font-family: Fustat;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 18px;
+    display: none;
+    z-index: 3;
+    transition: content 0.3s ease;
+  }
+  
+  .trip:hover::after {
+    display: block; /* Show description on hover */
+  }
