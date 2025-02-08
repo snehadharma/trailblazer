@@ -1,0 +1,70 @@
+.generate-container {
+    justify-content: center;
+    font-family: 'Fustat';
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .generate-header {
+    margin-top: 7%;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #0E4A6C;
+  }
+
+  .generate-input {
+    font-family: 'Fustat';
+    color: #6EA2C4;
+    align-items: center;
+    width: 85%;
+    height: 85%;
+    padding: 22px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    font-size: 24px;
+    min-height: 250px;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-y: auto;
+    z-index: 1;
+  }
+
+  .generate-input::placeholder {
+    color: #6EA2C4; /* Color for the placeholder text */
+    opacity: 1;
+  }
+
+  .generate-button {
+    background-color: #0E4A6C;
+    border-radius: 45px;
+    font-family: 'Fustat';
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .generate-button:hover {
+    font-family: 'Fustat';
+  }
+
+  .img {
+    position: fixed;  /* Positioning it absolutely */
+    max-width: 300px;
+    width: 25%;
+    color: #AF7746;
+    bottom:0;
+    left: 81%;  /* Moves it slightly left */
+    height: auto;
+  }
+
+
