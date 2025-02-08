@@ -3,7 +3,8 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from './firebase';
 import { useNavigate } from 'react-router-dom';
 import { setDoc, doc } from 'firebase/firestore';
-import './SignUp.css'; // Import SignUp-specific styles
+import Header from './Header';
+import './SignUp.css';
 
 function SignUp() {
   const [email, setEmail] = useState('');
@@ -32,9 +33,9 @@ function SignUp() {
 
   return (
     <div className="container">
-      <form className="form" onSubmit={handleSignup}>
-
-
+      <Header /> {Header}
+      <formsign className="form" onSubmit={handleSignup}>
+          <h2 className="title">Create a new account!</h2>
         <div className="input-container">
           <label className="label">First name</label>
           <input
@@ -80,11 +81,12 @@ function SignUp() {
         </div>
 
         <button type="submit" className="button">Sign Up</button>
-      </form>
+        <p>
+          Already have an account? <a href="/login" className="link">Login</a>
+        </p>
+      </formsign>
 
-      <p>
-        Already have an account? <a href="/login" className="link">Login</a>
-      </p>
+
     </div>
   );
 }

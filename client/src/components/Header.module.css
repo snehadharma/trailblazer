@@ -2,7 +2,7 @@
     position: absolute;
     top: 2px;
     left: 28px;
-    font-family: 'Like A Rope';
+    font-family: 'Like-A-Rope';
     padding: 5px;
     font-size: 40px;
     text-align: left;
@@ -21,10 +21,10 @@
 }
 
 .home:hover, .logIn:hover, .signUp:hover {
-    background-color: #0E4A6C; 
+    background-color: #0E4A6C;
     box-sizing: border-box;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 .header {
@@ -46,10 +46,10 @@
 
 .container {
     display: flex;
-    justify-content: space-between;  
-    align-items: center;             
-    width: 40%;     
-    padding: 10px; 
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    padding: 10px;
     margin-left: auto;
 }
 

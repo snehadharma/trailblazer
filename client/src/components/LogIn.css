@@ -1,15 +1,16 @@
 /* Login.css */
-.container {
+.login-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     height: 100vh;
     background-color: #e3d4c8;
   }
 
-  .form {
+  .login-form {
     background-color: #eef0eb;
+    margin-top: 7%;
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -19,20 +20,20 @@
     height: 50%;
   }
 
-  .title {
+  .login-title {
     color: #af7746;
     font-family: 'Fustat';
     text-align: center;
     margin-bottom: 10px;
   }
 
-  .input-container {
+  .login-input-container {
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
   }
 
-  .label {
+  .login-label {
     color: #af7746;
     font-family: 'Fustat';
     margin-bottom: 8px;
@@ -40,7 +41,7 @@
     font-weight: bold;
   }
 
-  .input {
+  .login-input {
     padding: 13px;
     border-radius: 17px;
     font-family: 'Fustat';
@@ -48,7 +49,7 @@
     font-size: 16px;
   }
 
-  .button {
+  .login-button {
     background-color: #af7746;
     font-family: 'Fustat';
     color: #fff;
@@ -60,7 +61,7 @@
     margin-top: 10px;
   }
 
-  .link {
+  .login-link {
     color: #af7746;
     font-family: 'Fustat';
     text-decoration: none;
