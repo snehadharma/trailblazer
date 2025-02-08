@@ -1,0 +1,69 @@
+/* SignUp.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #e3d4c8;
+}
+
+.form {
+    background-color: #eef0eb;
+    margin-bottom: 5px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    height: 80%;
+}
+
+.title {
+    color: #af7746;
+    font-family: 'Fustat';
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.input-container {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    color: #af7746;
+    font-family: 'Fustat';
+    margin-bottom: 8px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.input {
+    padding: 13px;
+    border-radius: 17px;
+    font-family: 'Fustat';
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.button {
+    background-color: #af7746;
+    font-family: 'Fustat';
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.link {
+    color: #af7746;
+    font-family: 'Fustat';
+    text-decoration: none;
+    font-weight: bold;
+}

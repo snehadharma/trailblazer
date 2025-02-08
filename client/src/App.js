@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
 import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
-import Home from './components/home';
+import Home from './components/Home';
 import Account from './components/Account/Account';
 import TrailBlazerLoggedin from './components/TrailBlazerLoggedIn/TrailBlazerLoggedIn'
 import GenerateTrip from './components/GenerateTrip';
@@ -12,10 +12,10 @@ import Discover from './components/Discover';
 
 function App() {
   return (
-    
+
     <Router>
       {/* <nav>
-        
+
         <Link to="/">Home</Link>
         <Link to="/login">Log in</Link>
         <Link to="/signup">Sign Up</Link>

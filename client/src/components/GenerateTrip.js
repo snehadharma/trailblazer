@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './TrailBlazerLoggedIn/Header';
+import Header from './TrailBlazerLoggedIn/HeaderLoggedIn';
 import TripPlanner from './TripPlanner';
 import GoogleMapComponent from './GoogleMapComponent';
 import CreateTrip from './CreateTrip';
