@@ -28,10 +28,10 @@
 }
 
 .header {
-    width: 90%;
+    width: 95%;
     position: relative;
     border-radius: 30px;
-    margin: 20px;
+    margin: 20px 20px auto;
     padding: 10px;
     background-color: #af7746;
     height: 35px;
@@ -53,3 +53,9 @@
     margin-left: auto;
 }
 
+.logo {
+    color: white;
+    width: 15px;
+    height: 15px;
+    padding: 5px;
+}
