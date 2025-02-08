@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import logo from "../assets/horseshoe.png"; 
 import styles from './Header.module.css';
 import '../App.css';
 
 function Header () {	
     return (
       <div className={styles.header}>
+        <img className={styles.logo} src={logo} alt="logo" />
         <div className={styles.trailblazer}>trailblazer</div>
         
         <div className = {styles.container}>

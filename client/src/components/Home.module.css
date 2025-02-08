@@ -1,6 +1,48 @@
 .paragraph{
     font-family: Fustat;
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
+    padding: 20px;
     color: #6EA2C4;
+}
+
+.title {
+    font-family: 'Like A Rope';
+    text-align: center;
+    font-size: 150px;
+    padding: 20px;
+    color: #AF7746;
+}
+
+.container{
+    display: flex;
+    padding: 50px;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.button {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Fustat';
+    padding: 5px 20px;
+    border-radius: 30px;
+    display: inline-block;
+    border-radius: 30px;
+    background-color: #0E4A6C;
+    font-size: 20px;
+}
+
+.img {
+    position: absolute;
+    max-width: 300px;
+    width: 25%;
+    color:#AF7746;
+    top: 320px;
+    left: -50px;
+    height:auto;
 }
