@@ -11,6 +11,7 @@ import {
 import Header from "./TrailBlazerLoggedIn/HeaderLoggedIn";
 import { auth, db } from "./firebase";
 import { doc, updateDoc, setDoc, getDoc, arrayUnion } from "firebase/firestore";
+import TripFetcher from "./TripFetcher";
 
 
 function NavTrip() {
