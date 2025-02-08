@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
 import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
-import Home from './components/Home';
+import Home from './components/home';
 import Account from './components/Account/Account';
 import TrailBlazerLoggedin from './components/TrailBlazerLoggedIn/TrailBlazerLoggedIn'
 import GenerateTrip from './components/GenerateTrip';
