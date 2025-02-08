@@ -31,8 +31,8 @@ function Discover() {
             <img src={texas4} alt="Trip4" />
           </div>
         </div>
-        <div className = {styles.subRect} data-description="@riannatravels">  
-        <div className={styles.trip}>
+        <div className = {styles.subRect} >  
+          <div className={styles.trip} data-description="@riannatravels">
             <img src={texas5} alt="Trip5" />
           </div>
           <div className={styles.trip} data-description="@awaywithaanya">
@@ -59,8 +59,8 @@ function Discover() {
             <img src={texas4} alt="Trip4" />
           </div>
         </div>
-        <div className = {styles.subRect} data-description="@riannatravels">  
-        <div className={styles.trip}>
+        <div className = {styles.subRect} >  
+          <div className={styles.trip} data-description="@riannatravels">
             <img src={texas5} alt="Trip5" />
           </div>
           <div className={styles.trip} data-description="@awaywithaanya">
@@ -88,8 +88,8 @@ function Discover() {
             <img src={texas4} alt="Trip4" />
           </div>
         </div>
-        <div className = {styles.subRect} data-description="@riannatravels">  
-        <div className={styles.trip}>
+      <div className = {styles.subRect} >  
+          <div className={styles.trip} data-description="@riannatravels">
             <img src={texas5} alt="Trip5" />
           </div>
           <div className={styles.trip} data-description="@awaywithaanya">
@@ -102,7 +102,7 @@ function Discover() {
             <img src={texas8} alt="Trip8" />
           </div>
         </div>
-        </div>
+      </div>
     </div>
   );
 }
