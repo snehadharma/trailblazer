@@ -2,17 +2,21 @@ import React from "react";
 import TripPlanner from "./TripPlanner";
 import GoogleMapComponent from "./GoogleMapComponent";
 import { getRoadTripIdeas } from "../api/aiService";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getDirections } from "../api/mapService";
-import { LoadScript, GoogleMap, DirectionsRenderer } from '@react-google-maps/api';
+import {
+  LoadScript,
+  GoogleMap,
+  DirectionsRenderer,
+} from "@react-google-maps/api";
 import Header from "./TrailBlazerLoggedIn/HeaderLoggedIn";
 
 function NavTrip() {
-const location = useLocation();
+  const location = useLocation();
   const [cities, setCities] = useState([]);
+  const [descriptions, setDescriptions] = useState([]);
   const [directions, setDirections] = useState(null);
-  
 
   const prompt = location.state.userPrompt; // Extract userPrompt from state
   // const handleGenerateTrip = async () => {
@@ -35,19 +39,61 @@ const location = useLocation();
     
   }
 
+  function extractCities(itinerary) {
+    return itinerary.map((location) => location.city);
+  }
+
+  function extractDescriptions(itinerary) {
+    return itinerary.map((location) => location.description);
+  }
+
   useEffect(() => {
     if (prompt) {
       const fetchTrip = async () => {
         console.log(prompt);
-        const itinerary = await getRoadTripIdeas(prompt);
-        if (itinerary) {
-          console.log("our itinerary" + JSON.stringify(itinerary.data, null, 2));
-        } else {
-          console.log("no response");
-        }
+        // const itinerary = await getRoadTripIdeas(prompt);
+        const itinerary = [
+          {
+            city: "San Antonio",
+            description:
+              "Known for its famous Tex-Mex cuisine, San Antonio offers a variety of traditional Mexican dishes such as tacos, enchiladas, and tamales.",
+          },
+          {
+            city: "Austin",
+            description:
+              "Experience authentic Mexican street food and upscale Mexican restaurants in the capital city of Texas.",
+          },
+          {
+            city: "Houston",
+            description:
+              "Explore Houston's vibrant Mexican food scene with a diverse range of options including mole, pozole, and chiles rellenos.",
+          },
+          {
+            city: "Dallas",
+            description:
+              "Indulge in mouth-watering Tex-Mex dishes and traditional Mexican fare in the bustling city of Dallas.",
+          },
+          {
+            city: "Corpus Christi",
+            description:
+              "Savor fresh seafood with a Mexican twist in Corpus Christi, known for its delicious ceviche and fish tacos.",
+          },
+          {
+            city: "San Antonio",
+            description:
+              "End your journey where you started and enjoy one last delicious meal of traditional Mexican food in San Antonio.",
+          },
+        ];
+
         console.log("Itinerary received:", itinerary); // Debug log
-        setCities(itinerary);
-        // setCities(itinerary);
+
+        const cityArr = extractCities(itinerary);
+        const descrArr = extractDescriptions(itinerary);
+        console.log("city array: " + cityArr);
+        setCities(cityArr);
+
+        console.log("descriptions: " + descrArr);
+        setDescriptions(descrArr);
         // getDirections(itinerary, setDirections);
       };
 
@@ -55,6 +101,10 @@ const location = useLocation();
     }
   }, [prompt]); // Runs whenever `prompt` changes
 
+  const containerStyle = {
+    width: "100%",
+    height: "400px",
+  };
 
   return (
     <div>
