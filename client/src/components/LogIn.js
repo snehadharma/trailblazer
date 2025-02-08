@@ -22,7 +22,7 @@ function LogIn() {
   return (
     <div className="container">
       <form className="form" onSubmit={handleLogin}>
-        <h2 className="title">Login</h2>
+        {/* <h2 className="title">Login</h2> */}
 
         <div className="input-container">
           <label className="label">Email Address</label>
