@@ -12,6 +12,7 @@ function SignUp() {
   const [password, setPassword] = useState('');
   const [fname, setFirstName] = useState('');
   const [lname, setLastName] = useState('');
+  const [username, setUserName] = useState('');
   const navigate = useNavigate();
 
   const handleSignup = async (e) => {
@@ -60,6 +61,17 @@ function SignUp() {
           />
         </div>
 
+        <div>
+          <label>Username</label>
+          <input
+            type="text"
+            className="input"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </div>
+
         <div className="input-container">
           <label className="label">Email</label>
           <input
@@ -81,6 +93,9 @@ function SignUp() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+
+        
+        
 
         <button type="submit" className="button">Sign Up</button>
         <p>
