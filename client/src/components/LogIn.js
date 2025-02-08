@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from './firebase';
 import { useNavigate } from 'react-router-dom';
+import './LogIn.css'; // Import the CSS file
 
 function LogIn() {
   const [email, setEmail] = useState('');
@@ -19,41 +20,38 @@ function LogIn() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleLogin}> 
-        <h2>Login</h2>
-        <div className = "email-login">
-          <label>Email Address</label>
+    <div className="container">
+      <form className="form" onSubmit={handleLogin}>
+        <h2 className="title">Login</h2>
+
+        <div className="input-container">
+          <label className="label">Email Address</label>
           <input
-              type = "email"
-              className = "form-control"
-              placeholder = "enter email here"
-              value = { email }
-              onChange = {(e) => setEmail(e.target.value)}
+            type="email"
+            className="input"
+            placeholder="Enter email here"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
-        <div className = "pw-login">
-          <label>Password</label>
+        <div className="input-container">
+          <label className="label">Password</label>
           <input
-              type = "password"
-              className = "form-control"
-              placeholder = "enter password here"
-              value = { password }
-              onChange = {(e) => setPassword(e.target.value)}
+            type="password"
+            className="input"
+            placeholder="Enter password here"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
 
-        <div>
-          <button type="submit" className = "submit_button">
-              submit
-          </button>
-        </div>
+        <button type="submit" className="button">Log In</button>
+        <p>
+        Don't have an account? <a href="/signup" className="link">Sign up</a>
+        </p>
       </form>
-      
-       <p>
-        Don't have an account? <a href="/signup">Sign up</a>
-       </p>
+
 
     </div>
   );
