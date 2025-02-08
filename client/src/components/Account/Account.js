@@ -62,6 +62,7 @@ function Account() {
           <img className={styles['profile-pic']} src={pfpImage} alt="PFP" />
             <div className={styles['account-details']}>
               <h3 className= {styles['account-name']}> {userDetails.firstName} {userDetails.lastName}</h3>
+              <h3>{userDetails.username}</h3>
               <h3 className= {styles['account-email']}>  {userDetails.email} </h3>
             </div>
             <button onClick={handleLogout} className={styles['logout-button']}>

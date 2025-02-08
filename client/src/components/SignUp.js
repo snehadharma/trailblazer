@@ -23,6 +23,7 @@ function SignUp() {
       if (user) {
         await setDoc(doc(db, "Users", user.uid), {
           email: user.email,
+          username: username,
           firstName: fname,
           lastName: lname,
         });
