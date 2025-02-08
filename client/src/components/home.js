@@ -1,11 +1,16 @@
 import React from "react";
 import Header from './Header';
+import styles from './Home.module.css';
+
 
 const Home = () => {	
+  
   	return (
       <div>
-      <Header />  {Header}
-      <p>Welcome to the Home Page!</p>
+        <Header />  {Header}
+        <div>
+        <div className={styles.paragraph}>welcome to...</div>
+        </div>
     </div>
     )
     		
