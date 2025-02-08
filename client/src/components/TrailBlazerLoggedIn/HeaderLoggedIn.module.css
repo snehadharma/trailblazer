@@ -1,0 +1,61 @@
+.trailblazer {
+    position: absolute;
+    top: 2px;
+    left: 28px;
+    font-family: 'Like A Rope';
+    padding: 5px;
+    font-size: 40px;
+    text-align: left;
+    display: inline;
+    width: 110.6px;
+    height: 18px;
+}
+.generateTrip, .discover, .account {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Fustat';
+    padding: 5px 20px;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+.generateTrip:hover, .discover:hover, .account:hover {
+    background-color: #0E4A6C;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.header {
+    width: 95%;
+    position: relative;
+    border-radius: 30px;
+    margin: 20px 20px auto;
+    padding: 10px;
+    background-color: #af7746;
+    height: 35px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 15.43px;
+    color: #fff;
+    font-family: Fustat;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    padding: 10px;
+    margin-left: auto;
+}
+
+.logo {
+    color: white;
+    width: 15px;
+    height: 15px;
+    padding: 5px;
+}
