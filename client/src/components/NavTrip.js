@@ -1,11 +1,14 @@
 import React from "react";
 import { getRoadTripIdeas } from "../api/aiService";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getDirections } from "../api/mapService";
+import {
+  LoadScript,
+  GoogleMap,
+  DirectionsRenderer,
+} from "@react-google-maps/api";
 import Header from "./TrailBlazerLoggedIn/HeaderLoggedIn";
-import TripFetcher from "../TripFetcher";
-import { LoadScript } from "@react-google-maps/api";
 
 function NavTrip() {
   // Your API key for Google Maps
@@ -15,6 +18,8 @@ function NavTrip() {
   const [cities, setCities] = useState([]);
   const [descriptions, setDescriptions] = useState([]);
   const [itinerary, setItinerary] = useState();
+  const [currentTripId, setCurrentTripId] = useState(null);
+  const navigate = useNavigate();
 
   const prompt = location.state.userPrompt; // Extract userPrompt from state
   // const handleGenerateTrip = async () => {
@@ -25,7 +30,9 @@ function NavTrip() {
   //   getDirections(itinerary, setDirections);
   // };
 
-  const handleSaveTrip = () => {};
+  const handleSaveTrip = () => {
+    
+  }
 
   const handleEditPrompt = () => {};
 
