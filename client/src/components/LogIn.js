@@ -22,8 +22,9 @@ function LogIn() {
   };
 
   return (
+    <div>
+      <Header /> {Header}
     <div className="login-container">
-      <Header />
       <form className="login-form" onSubmit={handleLogin}>
         <div className="login-input-container">
           <label className="login-label">Email Address</label>
@@ -52,9 +53,8 @@ function LogIn() {
           Don't have an account? <a href="/signup" className="login-link">Sign up</a>
         </p>
       </form>
-      <div className="cactus-container">
-        <img src={cactusImage} alt="Cactus" className="cactus-image" />
-      </div>
+      <img src={cactusImage} alt="Cactus" className="img" />
+    </div>
     </div>
   );
 }

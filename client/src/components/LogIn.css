@@ -1,82 +1,78 @@
 /* Login.css */
 .login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    height: 100vh;
-    background-color: #e3d4c8;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-color: #e3d4c8;
+}
 
-  .login-form {
-    background-color: #eef0eb;
-    margin-top: 7%;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    width: 35%;
-    height: 50%;
-  }
+.login-form {
+  background-color: #eef0eb;
+  margin-top: 7%;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  height: 50%;
+}
 
-  .login-title {
-    color: #af7746;
-    font-family: 'Fustat';
-    text-align: center;
-    margin-bottom: 10px;
-  }
+.login-title {
+  color: #af7746;
+  font-family: 'Fustat';
+  text-align: center;
+  margin-bottom: 10px;
+}
 
-  .login-input-container {
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-  }
+.login-input-container {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+}
 
-  .login-label {
-    color: #af7746;
-    font-family: 'Fustat';
-    margin-bottom: 8px;
-    font-size: 24px;
-    font-weight: bold;
-  }
+.login-label {
+  color: #af7746;
+  font-family: 'Fustat';
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: bold;
+}
 
-  .login-input {
-    padding: 13px;
-    border-radius: 17px;
-    font-family: 'Fustat';
-    border: 1px solid #ccc;
-    font-size: 16px;
-  }
+.login-input {
+  padding: 13px;
+  border-radius: 17px;
+  font-family: 'Fustat';
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
 
-  .login-button {
-    background-color: #af7746;
-    font-family: 'Fustat';
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 15px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
+.login-button {
+  background-color: #af7746;
+  font-family: 'Fustat';
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
 
-  .login-link {
-    color: #af7746;
-    font-family: 'Fustat';
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .cactus-container {
-    position: absolute;
-    bottom: 0px; /* Adjust the value as needed */
-    width: 100%;
-    display: flex;
-    justify-content: left; /* Center the image horizontally */
-  }
-
-  .cactus-image {
-    max-width: 400px;
-    height: auto;
-  }
+.login-link {
+  color: #af7746;
+  font-family: 'Fustat';
+  text-decoration: none;
+  font-weight: bold;
+}
+.img {
+  position: fixed;  /* Positioning it absolutely */
+  max-width: 300px;
+  width: 25%;
+  color: #AF7746;
+  bottom:0;
+  left: -50px;  /* Moves it slightly left */
+  height: auto;
+}
