@@ -10,25 +10,27 @@
     width: 110.6px;
     height: 18px;
 }
-.logIn {
+.logIn, .signUp, .home {
     font-size: 20px;
+    color: white;
+    text-decoration: none;
     font-family: 'Fustat';
+    padding: 5px 20px;
+    border-radius: 30px;
     display: inline-block;
 }
 
-.signUp {
-    font-size: 20px;
-    display: inline-block;
-}
-.home {
-    font-size: 20px;
-    display: inline-block;
+.home:hover, .logIn:hover, .signUp:hover {
+    background-color: #0E4A6C; 
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); 
 }
 
 .header {
     width: 90%;
     position: relative;
-    border-radius: 15px;
+    border-radius: 30px;
     margin: 20px;
     padding: 10px;
     background-color: #af7746;

@@ -1,16 +1,19 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import '../App.css';
 
-const Header = () => {	
+function Header () {	
     return (
       <div className={styles.header}>
         <div className={styles.trailblazer}>trailblazer</div>
+        
         <div className = {styles.container}>
-          <div className={styles.logIn}>log in</div>
-          <div className={styles.signUp}>sign up</div>
-          <div className={styles.home}>home</div>
+            <Link to="/Home" className={styles.home}>home</Link>
+            <Link to="/LogIn" className={styles.logIn}>log in</Link>
+            <Link to="/SignUp" className={styles.signUp}>sign up</Link>
         </div>
+
       </div>)
             
 };

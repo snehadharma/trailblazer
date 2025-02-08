@@ -12,20 +12,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-// const Home = () => {
-//   return (
-//     <div>
-//         <p>hello world</p>
-//         <nav>
-//             <Link to="/">Home</Link>
-//             <Link to="/login">Log in</Link>
-//             <Link to="/signup">Sign Up</Link>
-//         </nav>
-        
-//     </div>
-//   )
-// }
-
-// export default Home;
