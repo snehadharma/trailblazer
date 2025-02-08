@@ -1,22 +1,19 @@
 import React from "react";
-import TripPlanner from "./TripPlanner";
-import GoogleMapComponent from "./GoogleMapComponent";
 import { getRoadTripIdeas } from "../api/aiService";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getDirections } from "../api/mapService";
-import {
-  LoadScript,
-  GoogleMap,
-  DirectionsRenderer,
-} from "@react-google-maps/api";
 import Header from "./TrailBlazerLoggedIn/HeaderLoggedIn";
+import TripFetcher from "../TripFetcher";
+import { LoadScript } from "@react-google-maps/api";
 
 function NavTrip() {
+  // Your API key for Google Maps
+  const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+
   const location = useLocation();
   const [cities, setCities] = useState([]);
   const [descriptions, setDescriptions] = useState([]);
-  const [directions, setDirections] = useState(null);
   const [itinerary, setItinerary] = useState();
 
   const prompt = location.state.userPrompt; // Extract userPrompt from state
@@ -28,17 +25,11 @@ function NavTrip() {
   //   getDirections(itinerary, setDirections);
   // };
 
-  const handleSaveTrip = () => {
+  const handleSaveTrip = () => {};
 
-  }
+  const handleEditPrompt = () => {};
 
-  const handleEditPrompt = () => {
-
-  }
-
-  const handleRegenerate = () => {
-    
-  }
+  const handleRegenerate = () => {};
 
   function extractCities(itinerary) {
     return itinerary.map((location) => location.city);
@@ -52,39 +43,39 @@ function NavTrip() {
     if (prompt) {
       const fetchTrip = async () => {
         console.log(prompt);
-        // const itinerary = await getRoadTripIdeas(prompt);
-        const it = [
-          {
-            city: "San Antonio",
-            description:
-              "Known for its famous Tex-Mex cuisine, San Antonio offers a variety of traditional Mexican dishes such as tacos, enchiladas, and tamales.",
-          },
-          {
-            city: "Austin",
-            description:
-              "Experience authentic Mexican street food and upscale Mexican restaurants in the capital city of Texas.",
-          },
-          {
-            city: "Houston",
-            description:
-              "Explore Houston's vibrant Mexican food scene with a diverse range of options including mole, pozole, and chiles rellenos.",
-          },
-          {
-            city: "Dallas",
-            description:
-              "Indulge in mouth-watering Tex-Mex dishes and traditional Mexican fare in the bustling city of Dallas.",
-          },
-          {
-            city: "Corpus Christi",
-            description:
-              "Savor fresh seafood with a Mexican twist in Corpus Christi, known for its delicious ceviche and fish tacos.",
-          },
-          {
-            city: "San Antonio",
-            description:
-              "End your journey where you started and enjoy one last delicious meal of traditional Mexican food in San Antonio.",
-          },
-        ];
+        const it = await getRoadTripIdeas(prompt);
+        // const it = [
+        //   {
+        //     city: "San Antonio",
+        //     description:
+        //       "Known for its famous Tex-Mex cuisine, San Antonio offers a variety of traditional Mexican dishes such as tacos, enchiladas, and tamales.",
+        //   },
+        //   {
+        //     city: "Austin",
+        //     description:
+        //       "Experience authentic Mexican street food and upscale Mexican restaurants in the capital city of Texas.",
+        //   },
+        //   {
+        //     city: "Houston",
+        //     description:
+        //       "Explore Houston's vibrant Mexican food scene with a diverse range of options including mole, pozole, and chiles rellenos.",
+        //   },
+        //   {
+        //     city: "Dallas",
+        //     description:
+        //       "Indulge in mouth-watering Tex-Mex dishes and traditional Mexican fare in the bustling city of Dallas.",
+        //   },
+        //   {
+        //     city: "Corpus Christi",
+        //     description:
+        //       "Savor fresh seafood with a Mexican twist in Corpus Christi, known for its delicious ceviche and fish tacos.",
+        //   },
+        //   {
+        //     city: "San Antonio",
+        //     description:
+        //       "End your journey where you started and enjoy one last delicious meal of traditional Mexican food in San Antonio.",
+        //   },
+        // ];
         setItinerary(it);
 
         console.log("Itinerary received:", it); // Debug log
@@ -115,8 +106,6 @@ function NavTrip() {
       <button onClick={handleSaveTrip}>save</button>
       <button onClick={handleRegenerate}>regenerate</button>
       <button onClick={handleEditPrompt}>edit</button>
-      {/* <TripPlanner /> */}
-      {/* <GoogleMapComponent /> */}
 
       <div>
         {/* Left Side: Itinerary */}
@@ -135,11 +124,9 @@ function NavTrip() {
 
         {/* Right Side: Map */}
         <div>
-          {/* <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
-          <GoogleMap mapContainerStyle={containerStyle} center={{ lat: 31.9686, lng: -99.9018 }} zoom={6}>
-            {directions && <DirectionsRenderer directions={directions} />}
-          </GoogleMap>
-        </LoadScript> */}
+          <LoadScript googleMapsApiKey={googleMapsApiKey}>
+            <TripFetcher itinerary={itinerary} />
+          </LoadScript>
         </div>
       </div>
     </div>
