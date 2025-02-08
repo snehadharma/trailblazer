@@ -6,6 +6,8 @@ import SignUp from './components/SignUp';
 import Home from './components/Home';
 import Account from './components/Account/Account';
 import TrailBlazerLoggedin from './components/TrailBlazerLoggedIn/TrailBlazerLoggedIn'
+import GenerateTrip from './components/GenerateTrip';
+import Discover from './components/Discover';
 
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path='/trailblazer/account' element={<Account />} />
         <Route path='/trailblazer' element={<TrailBlazerLoggedin />} />
+        <Route path='/trailblazer/generatetrip' element={<GenerateTrip />} />
+        <Route path='/trailblazer/discover' element={<TrailBlazerLoggedin />} />
       </Routes>
     </Router>
   );
