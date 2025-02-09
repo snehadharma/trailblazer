@@ -25,6 +25,7 @@ function NavTrip() {
   const [descriptions, setDescriptions] = useState([]);
   const [itinerary, setItinerary] = useState();
   const [currentTripId, setCurrentTripId] = useState(null);
+  const [regenKey, setRegenKey] = useState(0);
   const navigate = useNavigate();
 
   const prompt = location.state?.userPrompt; // Extract userPrompt from state
@@ -84,8 +85,6 @@ function NavTrip() {
   const handleRegenerate = () => {
     setRegenKey(prevKey => prevKey + 1);
   };
-
-  const handleRegenerate = () => {};
 
   function extractCities(itinerary) {
     return itinerary.map((location) => location.city);

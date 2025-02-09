@@ -123,9 +123,10 @@
   }
 .imgbootnav {
     position: absolute;  /* Make it positionable */
-    top: 44px;  /* Align it below the header */
-    left: 825px;  /* Align it to the left, adjust as necessary */
-    max-width: 19%;
+    top: 5%;  /* Align it below the header */
+    margin-right: 200px;
+    left: 925px;  /* Align it to the left, adjust as necessary */
+    max-width: 17%;
     color: #AF7746;
     height: auto;
     transform: rotate(20deg);  /* Keeps the rotation */
