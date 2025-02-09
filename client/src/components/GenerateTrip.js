@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import NavTrip from "./NavTrip";
 import './Generate.css';
 import cactusImage from '../assets/cacti.png';
+import bootImage from '../assets/boots.png';
 
 const GenerateTrip = () => {
   const [userPrompt, setUserPrompt] = useState("");
@@ -30,6 +31,7 @@ const GenerateTrip = () => {
       <button className="generate-button" onClick={handleNavTrip}>let's go!</button>
       <img src={cactusImage} alt="Cactus" className="img" />
       </div>
+      <img src={bootImage} alt="Boots" className="imgboot" />
     </div>
   );
 };

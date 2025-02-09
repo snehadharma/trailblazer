@@ -12,6 +12,7 @@ import Header from "./TrailBlazerLoggedIn/HeaderLoggedIn";
 import { auth, db } from "./firebase";
 import { doc, updateDoc, setDoc, getDoc, arrayUnion } from "firebase/firestore";
 import TripFetcher from "./TripFetcher";
+import './NavTrip.css';
 
 function NavTrip() {
   // Your API key for Google Maps
@@ -149,16 +150,20 @@ function NavTrip() {
   return (
     <div>
       <Header />
+      <div className="navtrip-container">
       {prompt ? (
         <>
-          <h1>Yeehaw! Here are your trip details!</h1>
-          <button onClick={handleSaveTrip}>save</button>
-          <button onClick={handleRegenerate}>regenerate</button>
-          <button onClick={handleEditPrompt}>edit</button>
+          <h1 className="navtrip-header">Yeehaw! Here are your trip details!</h1>
 
-          <div>
+          <div className="navtrip-buttons">
+            <button onClick={handleSaveTrip}>Save</button>
+            <button onClick={handleRegenerate}>Regenerate</button>
+            <button onClick={handleEditPrompt}>Edit</button>
+          </div>
+
+          <div className="navtrip-content">
             {/* Left Side: Itinerary */}
-            <div>
+            <div className="navtrip-itinerary">
               {cities.length > 0 && (
                 <ul>
                   {cities.map((city, index) => (
@@ -172,7 +177,7 @@ function NavTrip() {
             </div>
 
             {/* Right Side: Map */}
-            <div>
+            <div className="navtrip-map">
               <LoadScript googleMapsApiKey={googleMapsApiKey}>
                 <TripFetcher itinerary={itinerary} />
               </LoadScript>
@@ -180,8 +185,9 @@ function NavTrip() {
           </div>
         </>
       ) : (
-        <><h1>You need a prompt to continue!</h1></>
+        <h1 className="navtrip-header">You need a prompt to continue!</h1>
       )}
+      </div>
     </div>
   );
 }

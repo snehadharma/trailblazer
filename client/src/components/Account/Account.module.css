@@ -104,6 +104,6 @@
     font-size: 24px;
     font-family: 'Fustat';
     font-weight: bold;
-    color: #AF7746; /* Orange color for the text */
-    margin: 0; /* Remove margin to keep it tight */
+    color: #AF7746;
+    margin: 0; 
   }

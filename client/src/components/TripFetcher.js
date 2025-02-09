@@ -10,7 +10,9 @@ function TripFetcher({ itinerary }) {
 
   const containerStyle = {
     width: "100%",
-    height: "400px",
+    height: "100%",
+    borderRadius: "15px", // Adds rounded corners
+    overflow: "hidden",   // Ensures the corners are properly clipped
   };
 
   // Extract the cities from the itinerary

@@ -13,7 +13,7 @@
   .generate-header {
     margin-top: 7%;
     font-size: 1.8rem;
-    margin-bottom: 20px;
+    margin-bottom: 2%;
     color: #0E4A6C;
   }
 
@@ -21,10 +21,10 @@
     font-family: 'Fustat';
     color: #6EA2C4;
     align-items: center;
-    width: 85%;
+    width: 80%;
     height: 85%;
     padding: 2%;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     border-radius: 15px;
     border: 1px solid #ccc;
     font-size: 24px;
@@ -59,12 +59,22 @@
 
   .img {
     position: fixed;  /* Positioning it absolutely */
-    max-width: 300px;
-    width: 25%;
+    max-width: 40%;
     color: #AF7746;
     bottom:0;
-    left: 81%;  /* Moves it slightly left */
+    left: 77%;  /* Moves it slightly left */
     height: auto;
   }
+
+  .imgboot {
+    position: fixed;  /* Keeps the image fixed in place */
+    max-width: 25%;
+    color: #AF7746;
+    top: 40px;  /* Adjust this value to move it lower */
+    left: 0;
+    height: auto;
+    transform: rotate(20deg);
+  }
+
 
 

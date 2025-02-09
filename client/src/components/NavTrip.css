@@ -1,0 +1,87 @@
+.navtrip-container {
+    font-family: 'Fustat';
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .navtrip-header {
+    text-align: center;
+    font-size: 2rem;
+    color: #0E4A6C;
+    margin-bottom: 20px;
+  }
+
+  .navtrip-buttons {
+    display: flex;
+    font-family: 'Fustat';
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .navtrip-buttons button {
+    background-color: #0E4A6C;
+    color: white;
+    font-family: 'Fustat';
+    padding: 10px 15px;
+    border: none;
+    border-radius: 17px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .navtrip-buttons button:hover {
+    background-color: #45a049;
+  }
+
+  /* Two-column layout */
+  .navtrip-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  /* Left: Itinerary */
+  .navtrip-itinerary {
+    flex: 1;
+    background: white;
+    font-family: 'Fustat';
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .navtrip-itinerary ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .navtrip-itinerary li {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .navtrip-itinerary h3 {
+    color: #333;
+    margin: 0;
+  }
+
+  .navtrip-itinerary p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 5px 0 0;
+  }
+
+  /* Right: Map */
+  .navtrip-map {
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    min-height: 500px; /* Ensures the map is at least 500px tall */
+    display: flex;
+    align-items: center;
+  }

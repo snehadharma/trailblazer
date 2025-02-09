@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import cactusImage from '../assets/cacti.png'; // Import the image
 import './LogIn.css'; // Import the correct CSS file
-import { motion } from "framer-motion";
 
 function LogIn() {
   const [email, setEmail] = useState('');
@@ -23,7 +22,6 @@ function LogIn() {
   };
 
   return (
-    <motion.div exit={{ opacity: 0 }}>
     <div>
       <Header /> {Header}
     <div className="login-container">
@@ -58,7 +56,6 @@ function LogIn() {
       <img src={cactusImage} alt="Cactus" className="img" />
     </div>
     </div>
-    </motion.div>
   );
 }
 
