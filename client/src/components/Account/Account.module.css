@@ -53,6 +53,18 @@
     color: #9f663d;
   }
 
+  .account-username {
+    margin-left: 0px;  /* Check if this needs adjusting */
+    margin-right: 0px;  /* Ensure no unnecessary space on the right */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    font-family: 'Fustat';
+    flex-direction: column;
+    align-items: flex-start;
+    color: #9f663d;
+  }
+
 
   .logout-button {
     background-color: #AF7746;
