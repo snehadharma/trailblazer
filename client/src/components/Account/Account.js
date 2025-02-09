@@ -22,58 +22,10 @@ import imageDb from '../firebase';
 function Account() {
   const [userDetails, setUserDetails] = useState(null);
   const [image, setImage] = useState('');
+  const [hardcodedTrips, setHardcodedTrips] = useState([]);
+  const [myTrips, setMyTrips] = useState(null);
 
   const navigate = useNavigate();
-
-  const hardcodedTrips = [
-    {
-      id: "HXdwWbpDDKkTW1kHafrF",
-      Query: "I’m traveling from Dallas to Austin and want to eat the best BBQ and see the most beautiful natural parks across Texas...",
-      Time: "February 7, 2025 at 4:03:04 PM UTC-6",
-      User: "snehalikesbbq",
-      imageUrl: [texas1, texas2, texas3], // Use the imported image
-    },
-  
-    {
-      id: "YAqhtk4Ne015C7FEfR9Q",
-      Query: "i love texas",
-      Time: "January 6, 2025 at 2:42.12PM UTC-6",
-      User: "oliviaontheroad",
-      imageUrl: [texas2, texas2, texas3], // Use the imported image
-    },
-  
-    {
-      id: "xxx",
-      Query: "rianna skaria sucks",
-      Time: "October 21, 2016 at 11:08:35PM UTC-5",
-      User: "riannatravels",
-      imageUrl: [texas3, texas2, texas3], // Use the imported image
-    },
-  
-    {
-      id: "xxx",
-      Query: "I’m traveling from Dallas to Austin and want to eat the best BBQ and see the most beautiful natural parks across Texas...",
-      Time: "February 17, 2025 at 6:04:02 PM UTC-6",
-      User: "awaywithaanya",
-      imageUrl: [texas4, texas2, texas3], // Use the imported image
-    },
-
-    {
-        id: "xxx",
-        Query: "I’m traveling from Dallas to Austin and want to eat the best BBQ and see the most beautiful natural parks across Texas...",
-        Time: "February 17, 2025 at 6:04:02 PM UTC-6",
-        User: "awaywithaanya",
-        imageUrl: [texas5, texas2, texas3], // Use the imported image
-      },
-    
-      {
-        id: "xxx",
-        Query: "I’m traveling from Dallas to Austin and want to eat the best BBQ and see the most beautiful natural parks across Texas...",
-        Time: "February 17, 2025 at 6:04:02 PM UTC-6",
-        User: "awaywithaanya",
-        imageUrl: [texas6, texas2, texas3], // Use the imported image
-      },
-];
 
   const upload = async () => {
     if (image == null) return;  // If no file selected, do nothing
@@ -104,6 +56,7 @@ function Account() {
 
         if (docSnap.exists()) {
           setUserDetails(docSnap.data());
+          setMyTrips(docSnap.roadTrips || []);
         } else {
           console.log("User document not found");
           setUserDetails(null);
@@ -115,10 +68,23 @@ function Account() {
     return unsubscribe;  // Important for cleanup
   };
 
+
+
   useEffect(() => {
     const unsubscribe = fetchUserData();
+    if (userDetails) {
+      const trips = userDetails.roadTrips?.map((trip, index) => ({
+        id: `ID-${index}`,  // You can adjust this ID generation logic as needed
+        Query: trip.itinerary?.[0]?.description ?? "No description available", // safely access description
+        Time: new Date().toLocaleString(), // Replace with actual time if needed
+        User: userDetails.username,
+        imageUrl: [texas1, texas2, texas3],  // Adjust the images as per your requirements
+      }));
+
+      setHardcodedTrips(trips);
+    }
     return () => unsubscribe();  // Cleanup on component unmount
-  }, []);
+  }, [userDetails]);
 
   async function handleLogout() {
     try {
@@ -129,6 +95,8 @@ function Account() {
       console.log ("Error logging out: " , error);
     }
   }
+
+
 
   const [selectedTrip, setSelectedTrip] = useState(null);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
@@ -205,8 +173,7 @@ function Account() {
                           </button>
                         </div>
                     <h2>@{selectedTrip.User}</h2>
-                    <p><strong>Prompt Generated:</strong> {selectedTrip.Query}</p>
-                    <p><strong>Date:</strong> {selectedTrip.Time}</p>
+                    <p><strong></strong> {selectedTrip.Query}</p>
                     <button onClick={() => setSelectedTrip(null)}>Close</button>
                   </div>
                   </div>
