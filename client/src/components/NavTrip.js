@@ -16,6 +16,7 @@ import './NavTrip.css';
 import pinImage from '../assets/pin-icon.png';
 import bootImage from '../assets/boots.png';
 
+
 function NavTrip() {
   // Your API key for Google Maps
   const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
@@ -103,14 +104,21 @@ function NavTrip() {
         setItinerary(it);
 
         console.log("Itinerary received:", it); // Debug log
+        let cityArr = [];
+        let descrArr = [];
+        
+        try {
+          cityArr = extractCities(it);
+          descrArr = extractDescriptions(it);
 
-        const cityArr = extractCities(it);
-        const descrArr = extractDescriptions(it);
-        console.log("city array: " + cityArr);
-        setCities(cityArr);
+          console.log("city array: " + cityArr);
+          setCities(cityArr);
 
-        console.log("descriptions: " + descrArr);
-        setDescriptions(descrArr);
+          console.log("descriptions: " + descrArr);
+          setDescriptions(descrArr);
+        } catch {
+          fetchTrip();
+        }
         // getDirections(itinerary, setDirections);
       };
 
@@ -158,9 +166,9 @@ function NavTrip() {
 
             {/* Right Side: Map */}
             <div className="navtrip-map">
-              <LoadScript googleMapsApiKey={googleMapsApiKey}>
+              {/* <LoadScript googleMapsApiKey={googleMapsApiKey}> */}
                 <TripFetcher itinerary={itinerary} />
-              </LoadScript>
+              {/* </LoadScript> */}
             </div>
           </div>
         </>

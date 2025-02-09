@@ -2,11 +2,30 @@ import React, { useEffect, useState } from "react";
 import {
   GoogleMap,
   DirectionsRenderer,
+  useJsApiLoader
 } from "@react-google-maps/api";
+
+// const { loaded, loadError } = useLoadScript({
+//   googleMapsApiKey: config.googleMapsApiKey,
+//   libraries: ["places", "directions"],
+// });
+const libs = ['directions', 'maps'];
 
 function TripFetcher({ itinerary }) {
   const [directions, setDirections] = useState(null);
   const [cities, setCities] = useState([]);
+  const [map, setMap] = useState(null);
+
+  const saveMap = (mapInstance) => {
+    console.log("Google Map loaded:", mapInstance);
+    setMap(mapInstance);
+  };
+
+  const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+    libraries: libs,
+  });
 
   const containerStyle = {
     width: "100%",
@@ -18,7 +37,7 @@ function TripFetcher({ itinerary }) {
   // Extract the cities from the itinerary
   useEffect(() => {
     if (itinerary && itinerary.length > 0) {
-      const cityList = itinerary.map((location) => location.city);
+      const cityList = itinerary.map((location) => `${location.city}, TX`);
       setCities(cityList);
     }
   }, [itinerary]);
@@ -33,44 +52,45 @@ function TripFetcher({ itinerary }) {
         stopover: true,
       }));
 
-      // Wait for the google.maps API to be fully loaded
-      const loadDirections = () => {
-        if (window.google && window.google.maps) {
-          const directionsService = new window.google.maps.DirectionsService();
-          directionsService.route(
-            {
-              origin,
-              destination,
-              waypoints,
-              travelMode: window.google.maps.TravelMode.DRIVING,
-            },
-            (result, status) => {
-              if (status === window.google.maps.DirectionsStatus.OK) {
-                setDirections(result);
-              } else {
-                console.error("Directions request failed due to " + status);
-              }
-            }
-          );
-        } else {
-          console.error("Google Maps API is not loaded.");
+      const directionsService = new window.google.maps.DirectionsService();
+      directionsService.route(
+        {
+          origin,
+          destination,
+          waypoints,
+          travelMode: window.google.maps.TravelMode.DRIVING,
+        },
+        (result, status) => {
+          if (status === window.google.maps.DirectionsStatus.OK) {
+            setDirections(result);
+          } else {
+            console.error("Directions request failed due to " + status);
+          }
         }
-      };
-
-      // Load directions after the map API is loaded
-      loadDirections();
+      );
     }
-  }, [cities]);
+  }, [isLoaded, cities]);
 
   return (
-    <GoogleMap
+    <>
+    {isLoaded && <GoogleMap
+      onLoad={saveMap}
       mapContainerStyle={containerStyle}
       center={{ lat: 31.9686, lng: -99.9018 }}
       zoom={6}
     >
-      {directions && <DirectionsRenderer directions={directions} />}
-    </GoogleMap>
+       {directions && <DirectionsRenderer directions={directions} />}
+    </GoogleMap>}
+    </>
   );
 }
 
 export default TripFetcher;
+
+// <GoogleMap
+    //   mapContainerStyle={containerStyle}
+    //   center={{ lat: 31.9686, lng: -99.9018 }}
+    //   zoom={6}
+    // >
+    //   {directions && <DirectionsRenderer directions={directions} />}
+    // </GoogleMap>
