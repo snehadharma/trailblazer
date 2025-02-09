@@ -99,9 +99,9 @@ function SignUp() {
 
 
         <button type="submit" className="button">Sign Up</button>
-        <p>
+        <div className={"par"}>
           Already have an account? <a href="/login" className="link">Login</a>
-        </p>
+        </div>
       </form>
       <img src={cactusImage} alt="Cactus" className="img" />
     </div>
