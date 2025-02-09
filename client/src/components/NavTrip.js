@@ -116,7 +116,7 @@ function NavTrip() {
 
       fetchTrip();
     }
-  }, [prompt]); // Runs whenever `prompt` changes
+  }, [prompt, regenKey]); // Runs whenever `prompt` changes
 
   const containerStyle = {
     width: "100%",
