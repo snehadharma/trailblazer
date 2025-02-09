@@ -13,7 +13,6 @@ import { auth, db } from "./firebase";
 import { doc, updateDoc, setDoc, getDoc, arrayUnion } from "firebase/firestore";
 import TripFetcher from "./TripFetcher";
 
-
 function NavTrip() {
   // Your API key for Google Maps
   const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
@@ -25,14 +24,13 @@ function NavTrip() {
   const [currentTripId, setCurrentTripId] = useState(null);
   const navigate = useNavigate();
 
-  const prompt = location.state.userPrompt; // Extract userPrompt from state
-  // const handleGenerateTrip = async () => {
-  //   console.log(prompt);
-  //   const itinerary = await getRoadTripIdeas(prompt);
-  //   console.log(itinerary);
-  //   setCities(itinerary);
-  //   getDirections(itinerary, setDirections);
-  // };
+  const prompt = location.state?.userPrompt; // Extract userPrompt from state
+  const handleGenerateTrip = async () => {
+    console.log(prompt);
+    const itinerary = await getRoadTripIdeas(prompt);
+    console.log(itinerary);
+    setCities(itinerary);
+  };
 
   const handleSaveTrip = async () => {
     try {
@@ -45,7 +43,9 @@ function NavTrip() {
       const userRef = doc(db, "Users", user.uid);
       const userDoc = await getDoc(userRef);
 
-      let existingTrips = userDoc.exists() ? userDoc.data().roadTrips || [] : [];
+      let existingTrips = userDoc.exists()
+        ? userDoc.data().roadTrips || []
+        : [];
 
       if (currentTripId) {
         // **Update the existing trip’s itinerary**
@@ -72,7 +72,7 @@ function NavTrip() {
       console.error("Error saving itinerary:", error);
       alert("Failed to save itinerary.");
     }
-  }
+  };
 
   const handleEditPrompt = () => {};
 
@@ -149,33 +149,39 @@ function NavTrip() {
   return (
     <div>
       <Header />
-      <h1>Yeehaw! Here are your trip details!</h1>
-      <button onClick={handleSaveTrip}>save</button>
-      <button onClick={handleRegenerate}>regenerate</button>
-      <button onClick={handleEditPrompt}>edit</button>
+      {prompt ? (
+        <>
+          <h1>Yeehaw! Here are your trip details!</h1>
+          <button onClick={handleSaveTrip}>save</button>
+          <button onClick={handleRegenerate}>regenerate</button>
+          <button onClick={handleEditPrompt}>edit</button>
 
-      <div>
-        {/* Left Side: Itinerary */}
-        <div>
-          {cities.length > 0 && (
-            <ul>
-              {cities.map((city, index) => (
-                <li key={index}>
-                  <h3>{city}</h3>
-                  <p>{descriptions[index]}</p>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+          <div>
+            {/* Left Side: Itinerary */}
+            <div>
+              {cities.length > 0 && (
+                <ul>
+                  {cities.map((city, index) => (
+                    <li key={index}>
+                      <h3>{city}</h3>
+                      <p>{descriptions[index]}</p>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
 
-        {/* Right Side: Map */}
-        <div>
-          <LoadScript googleMapsApiKey={googleMapsApiKey}>
-            <TripFetcher itinerary={itinerary} />
-          </LoadScript>
-        </div>
-      </div>
+            {/* Right Side: Map */}
+            <div>
+              <LoadScript googleMapsApiKey={googleMapsApiKey}>
+                <TripFetcher itinerary={itinerary} />
+              </LoadScript>
+            </div>
+          </div>
+        </>
+      ) : (
+        <><h1>You need a prompt to continue!</h1></>
+      )}
     </div>
   );
 }
