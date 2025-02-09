@@ -19,7 +19,7 @@ const hardcodedTrips = [
     Query: "I’m traveling from Dallas to Austin and want to eat the best BBQ and see the most beautiful natural parks across Texas...",
     Time: "February 7, 2025 at 4:03:04 PM UTC-6",
     User: "snehalikesbbq",
-    imageUrl: texas1, // Use the imported image
+    imageUrl: [texas1, texas2, texas3], // Use the imported image
   },
 
   {
@@ -27,7 +27,7 @@ const hardcodedTrips = [
     Query: "i love texas",
     Time: "January 6, 2025 at 2:42.12PM UTC-6",
     User: "oliviaontheroad",
-    imageUrl: texas2, // Use the imported image
+    imageUrl: [texas2, texas2, texas3], // Use the imported image
   },
 
   {
@@ -35,7 +35,7 @@ const hardcodedTrips = [
     Query: "rianna skaria sucks",
     Time: "October 21, 2016 at 11:08:35PM UTC-5",
     User: "riannatravels",
-    imageUrl: texas3, // Use the imported image
+    imageUrl: [texas3, texas2, texas3], // Use the imported image
   },
 
   {
@@ -43,7 +43,7 @@ const hardcodedTrips = [
     Query: "I’m traveling from Dallas to Austin and want to eat the best BBQ and see the most beautiful natural parks across Texas...",
     Time: "February 17, 2025 at 6:04:02 PM UTC-6",
     User: "awaywithaanya",
-    imageUrl: texas4, // Use the imported image
+    imageUrl: [texas4, texas2, texas3], // Use the imported image
   },
 
   {
@@ -51,7 +51,7 @@ const hardcodedTrips = [
     Query: "I’m traveling from Dallas to Austin and want to eat the best BBQ and see the most beautiful natural parks across Texas...",
     Time: "February 17, 2025 at 6:04:02 PM UTC-6",
     User: "awaywithaanya",
-    imageUrl: texas5, // Use the imported image
+    imageUrl: [texas5, texas2, texas3], // Use the imported image
   },
 
   {
@@ -59,7 +59,7 @@ const hardcodedTrips = [
     Query: "I’m traveling from Dallas to Austin and want to eat the best BBQ and see the most beautiful natural parks across Texas...",
     Time: "February 17, 2025 at 6:04:02 PM UTC-6",
     User: "awaywithaanya",
-    imageUrl: texas6, // Use the imported image
+    imageUrl: [texas6, texas2, texas3], // Use the imported image
   },
 
   {
@@ -67,7 +67,7 @@ const hardcodedTrips = [
     Query: "I’m traveling from Dallas to Austin and want to eat the best BBQ and see the most beautiful natural parks across Texas...",
     Time: "February 17, 2025 at 6:04:02 PM UTC-6",
     User: "awaywithaanya",
-    imageUrl: texas7, // Use the imported image
+    imageUrl: [texas7, texas2, texas3], // Use the imported image
   },
 
   {
@@ -75,14 +75,28 @@ const hardcodedTrips = [
     Query: "I’m traveling from Dallas to Austin and want to eat the best BBQ and see the most beautiful natural parks across Texas...",
     Time: "February 17, 2025 at 6:04:02 PM UTC-6",
     User: "awaywithaanya",
-    imageUrl: texas8, // Use the imported image
+    imageUrl: [texas8, texas2, texas3], // Use the imported image
   },
 ];
 
 const [selectedTrip, setSelectedTrip] = useState(null);
+const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
 
 const handleTripClick = (trip) => {
   setSelectedTrip(trip);
+  setCurrentPhotoIndex(0);
+};
+
+const goToNextPhoto = () => {
+  setCurrentPhotoIndex((prevIndex) =>
+    (prevIndex + 1) % selectedTrip.imageUrl.length
+  );
+};
+
+const goToPreviousPhoto = () => {
+  setCurrentPhotoIndex((prevIndex) =>
+    prevIndex === 0 ? selectedTrip.imageUrl.length - 1 : prevIndex - 1
+  );
 };
 
 const firstFour = hardcodedTrips.slice(0,4);
@@ -99,11 +113,10 @@ return (
             className={styles.trip}
             onClick={() => handleTripClick(trip)}
           >
-            <img src={trip.imageUrl} alt={trip.User} />
+            <img src={trip.imageUrl[0]} alt={trip.User} />
           </div>
         ))}
       </div>
-      <div className={styles.subRect} >
       <div className={styles.subRect} >
         {lastFour.map((trip) => (
           <div
@@ -111,19 +124,30 @@ return (
             className={styles.trip}
             onClick={() => handleTripClick(trip)}
           >
-            <img className={styles.img} src={trip.imageUrl} alt={trip.User} />
+            <img className={styles.trip} src={trip.imageUrl} alt={trip.User} />
           </div>
         ))}
-        </div>
       </div>
-      
     </div>
     
     {selectedTrip && (
        <div className={styles.overlay}>
       <div className={styles.modal}>
         <div className={styles.modalContent}>
-        <img className={styles.innerPhoto} src={selectedTrip.imageUrl} alt={"texas"} />
+        <div className={styles.carousel}>
+                <img
+                  className={styles.innerPhoto}
+                  src={selectedTrip.imageUrl[currentPhotoIndex]}
+                  alt={`${selectedTrip.User}'s trip`}
+                />
+                {/* Navigation Buttons */}
+                <button className={styles.prevButton} onClick={goToPreviousPhoto}>
+                  &#10094; {/* Left arrow */}
+                </button>
+                <button className={styles.nextButton} onClick={goToNextPhoto}>
+                  &#10095; {/* Right arrow */}
+                </button>
+              </div>
           <h2>@{selectedTrip.User}</h2>
           <p><strong>Prompt Generated:</strong> {selectedTrip.Query}</p>
           <p><strong>Date:</strong> {selectedTrip.Time}</p>

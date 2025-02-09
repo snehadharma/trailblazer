@@ -29,13 +29,21 @@
     transition: all opacity 0.3s ease;
 }
 
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 500px; /* Adjust as needed */
+  margin: 0 auto;
+}
+
+
 .img {
     width: 120%;
     height: auto;
 }
 
 .innerPhoto {
-  width: 300px;
+  width: 250px;
   height: auto;
 }
 
@@ -139,3 +147,31 @@
   .modalContent button:hover {
     background-color: #0E4A6C;
   }
+
+.prevButton,
+.nextButton {
+  position: absolute;
+  top: 50%;
+  background-color: #95b0c3;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.prevButton {
+  left: 10px;
+}
+
+.nextButton {
+  right: 10px;
+}
+
+.prevButton:hover,
+.nextButton:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
