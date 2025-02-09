@@ -11,18 +11,20 @@
 .form {
     background-color: #eef0eb;
     margin-top: 2%;
+    padding-bottom: 30px;
     top: 0;
-    padding: 40px;
+    padding: 30px;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     width: 35%;
-    height: 80%;
+    height: 83%;
 }
 
 
 .title {
+    margin-top: 0px;
     color: #af7746;
     font-family: 'Fustat';
     text-align: center;
@@ -60,7 +62,7 @@
     border-radius: 15px;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .link {
@@ -78,4 +80,9 @@
     bottom:0;
     left: -50px;  /* Moves it slightly left */
     height: auto;
+  }
+
+  .par {
+    margin-top: 3px;
+    font-size: 13px;
   }

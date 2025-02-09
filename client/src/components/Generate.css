@@ -1,8 +1,7 @@
 .generate-container {
     justify-content: center;
     font-family: 'Fustat';
-    margin: 20px;
-    padding: 20px;
+
     border-radius: 8px;
     display: flex;
     flex-direction: column;

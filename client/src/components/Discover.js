@@ -149,8 +149,8 @@ return (
                 </button>
               </div>
           <h2>@{selectedTrip.User}</h2>
-          <p><strong>Prompt Generated:</strong> {selectedTrip.Query}</p>
-          <p><strong>Date:</strong> {selectedTrip.Time}</p>
+          <p><strong></strong> {selectedTrip.Query}</p>
+          {/* <p><strong>Date:</strong> {selectedTrip.Time}</p> */}
           <button onClick={() => setSelectedTrip(null)}>Close</button>
         </div>
         </div>
