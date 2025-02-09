@@ -1,7 +1,7 @@
 .trailblazer {
     position: absolute;
     top: 2px;
-    left: 28px;
+    left: 50px;
     color: white;
     text-decoration: none;
     font-family: 'Like A Rope';
@@ -56,8 +56,7 @@
 }
 
 .logo {
-    color: white;
-    width: 15px;
-    height: 15px;
+    width: 25px;
+    height: 25px;
     padding: 5px;
 }
