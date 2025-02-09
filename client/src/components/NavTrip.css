@@ -3,7 +3,6 @@
     margin: 20px;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   .navtrip-header {
@@ -11,6 +10,7 @@
     font-size: 2rem;
     color: #0E4A6C;
     margin-bottom: 20px;
+    margin-top: 10px;
   }
 
   .navtrip-buttons {
@@ -34,48 +34,84 @@
   }
 
   .navtrip-buttons button:hover {
-    background-color: #45a049;
+    background-color: #2a6181;
   }
 
   /* Two-column layout */
   .navtrip-content {
+    color: #0E4A6C;
     display: flex;
     justify-content: space-between;
     gap: 20px;
   }
 
-  /* Left: Itinerary */
   .navtrip-itinerary {
     flex: 1;
     background: white;
+    color: #0E4A6C;
     font-family: 'Fustat';
     padding: 15px;
-    border-radius: 8px;
+    height: 75%;
+    border-radius: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .navtrip-itinerary ul {
     list-style-type: none;
+    color: #0E4A6C;
     padding: 0;
   }
 
   .navtrip-itinerary li {
+    color: #0E4A6C;
     margin-bottom: 15px;
     padding: 10px;
     border-bottom: 1px solid #ddd;
   }
 
   .navtrip-itinerary h3 {
-    color: #333;
+    color: #0E4A6C;
     margin: 0;
   }
 
   .navtrip-itinerary p {
-    color: #666;
+
+    color: #0E4A6C;
     font-size: 0.9rem;
     margin: 5px 0 0;
   }
 
+  /* New Pin Icon & Layout Styles */
+  .navtrip-item {
+    display: flex;
+    align-items: flex-start; /* Aligns items to the top */
+    gap: 20px;  /* Space between the pin and text */
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .navtrip-pin {
+    margin-top:0px;
+    width: 25px;  /* Adjust size of the pin */
+    height: 32px;
+    flex-shrink: 0; /* Prevents the pin from shrinking */
+  }
+
+  .navtrip-info {
+    flex: 1; /* Ensures text takes up remaining space */
+  }
+
+  .navtrip-info h3 {
+    font-size: 1.2rem;
+    color: #0E4A6C;
+    margin: 0;
+  }
+
+  .navtrip-info p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+  }
   /* Right: Map */
   .navtrip-map {
     flex: 1;
@@ -84,4 +120,14 @@
     min-height: 500px; /* Ensures the map is at least 500px tall */
     display: flex;
     align-items: center;
+  }
+.imgbootnav {
+    position: absolute;  /* Make it positionable */
+    top: 44px;  /* Align it below the header */
+    left: 825px;  /* Align it to the left, adjust as necessary */
+    max-width: 19%;
+    color: #AF7746;
+    height: auto;
+    transform: rotate(20deg);  /* Keeps the rotation */
+    z-index: -1;  /* Ensure it's above other elements */
   }

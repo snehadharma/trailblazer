@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import HeaderLoggedIn from "./TrailBlazerLoggedIn/HeaderLoggedIn";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import NavTrip from "./NavTrip";
 import './Generate.css';
 import cactusImage from '../assets/cacti.png';
 import bootImage from '../assets/boots.png';
 
 const GenerateTrip = () => {
-  const [userPrompt, setUserPrompt] = useState("");
+  const location = useLocation();
+  const [userPrompt, setUserPrompt] = useState(location.state?.userPrompt || "");
   const navigate = useNavigate();
 
   const handleNavTrip = () => {

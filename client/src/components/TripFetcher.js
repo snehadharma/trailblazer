@@ -10,7 +10,7 @@ function TripFetcher({ itinerary }) {
 
   const containerStyle = {
     width: "100%",
-    height: "100%",
+    height: "103.5%",
     borderRadius: "15px", // Adds rounded corners
     overflow: "hidden",   // Ensures the corners are properly clipped
   };

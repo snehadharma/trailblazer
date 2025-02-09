@@ -124,7 +124,7 @@ return (
             className={styles.trip}
             onClick={() => handleTripClick(trip)}
           >
-            <img className={styles.trip} src={trip.imageUrl} alt={trip.User} />
+            <img src={trip.imageUrl[0]} alt={trip.User} />
           </div>
         ))}
       </div>
