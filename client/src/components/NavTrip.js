@@ -74,7 +74,9 @@ function NavTrip() {
     }
   };
 
-  const handleEditPrompt = () => {};
+  const handleEditPrompt = () => {
+    
+  };
 
   const handleRegenerate = () => {};
 
