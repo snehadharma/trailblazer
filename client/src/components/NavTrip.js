@@ -22,6 +22,7 @@ function NavTrip() {
   const [descriptions, setDescriptions] = useState([]);
   const [itinerary, setItinerary] = useState();
   const [currentTripId, setCurrentTripId] = useState(null);
+  const [regenKey, setRegenKey] = useState(0);
   const navigate = useNavigate();
 
   const prompt = location.state?.userPrompt; // Extract userPrompt from state
@@ -75,10 +76,12 @@ function NavTrip() {
   };
 
   const handleEditPrompt = () => {
-    
+    navigate("/trailblazer/generatetrip", { state: { userPrompt: prompt } });
   };
 
-  const handleRegenerate = () => {};
+  const handleRegenerate = () => {
+    setRegenKey(prevKey => prevKey + 1); 
+  };
 
   function extractCities(itinerary) {
     return itinerary.map((location) => location.city);
@@ -92,39 +95,8 @@ function NavTrip() {
     if (prompt) {
       const fetchTrip = async () => {
         console.log(prompt);
-        // const it = await getRoadTripIdeas(prompt);
-        const it = [
-          {
-            city: "San Antonio",
-            description:
-              "Known for its famous Tex-Mex cuisine, San Antonio offers a variety of traditional Mexican dishes such as tacos, enchiladas, and tamales.",
-          },
-          {
-            city: "Austin",
-            description:
-              "Experience authentic Mexican street food and upscale Mexican restaurants in the capital city of Texas.",
-          },
-          {
-            city: "Houston",
-            description:
-              "Explore Houston's vibrant Mexican food scene with a diverse range of options including mole, pozole, and chiles rellenos.",
-          },
-          {
-            city: "Dallas",
-            description:
-              "Indulge in mouth-watering Tex-Mex dishes and traditional Mexican fare in the bustling city of Dallas.",
-          },
-          {
-            city: "Corpus Christi",
-            description:
-              "Savor fresh seafood with a Mexican twist in Corpus Christi, known for its delicious ceviche and fish tacos.",
-          },
-          {
-            city: "San Antonio",
-            description:
-              "End your journey where you started and enjoy one last delicious meal of traditional Mexican food in San Antonio.",
-          },
-        ];
+        const it = await getRoadTripIdeas(prompt);
+        
         setItinerary(it);
 
         console.log("Itinerary received:", it); // Debug log
@@ -141,7 +113,7 @@ function NavTrip() {
 
       fetchTrip();
     }
-  }, [prompt]); // Runs whenever `prompt` changes
+  }, [prompt, regenKey]); // Runs whenever `prompt` changes
 
   const containerStyle = {
     width: "100%",
