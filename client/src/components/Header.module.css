@@ -12,6 +12,13 @@
     width: 110.6px;
     height: 18px;
 }
+
+.active { 
+    background-color: #0E4A6C;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transform: scale(1.05);
+  }
+
 .logIn, .signUp, .home {
     font-size: 20px;
     color: white;
