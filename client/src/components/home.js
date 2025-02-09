@@ -1,6 +1,7 @@
 import React from "react";
 import Header from './Header';
 import cactiImage from "../assets/cacti.png";
+import boots from "../assets/boots.png";
 import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
 import { motion } from "framer-motion";
@@ -11,6 +12,7 @@ const Home = () => {
   	return (
       <div>
         <Header />  {Header}
+        <img className={styles.img2} src={boots} alt="boots" />
         <div className={styles.container}>
           <div className={styles.paragraphBounce}>welcome to...</div>
           <div className={styles.title}>Trailblazer</div>

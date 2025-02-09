@@ -54,6 +54,17 @@
     height:auto;
 }
 
+.img2 {
+    animation: fadeIn 3s ease-in-out, bounce 1s ease-in-out 2;
+    position: fixed;
+    max-width: 300px;
+    width: 25%;
+    top: 50;
+    right: 5px;
+    rotate: 20deg;
+    height:auto;
+}
+
 @keyframes fadeIn {
     0% {
       opacity: 0;

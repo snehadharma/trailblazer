@@ -29,9 +29,14 @@
     transition: all opacity 0.3s ease;
 }
 
-.trip img {
+.img {
     width: 120%;
     height: auto;
+}
+
+.innerPhoto {
+  width: 300px;
+  height: auto;
 }
 
 .trip hover {
@@ -74,4 +79,63 @@
   
   .trip:hover::after {
     display: block; /* Show description on hover */
+  }
+
+  .trip {
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  .trip img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 10; 
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 30px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContent {
+    background-color: white;
+    padding: 20px;
+    font-family: Fustat;
+    border-radius: 30px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .modalContent button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #6EA2C4;
+    color: white;
+    font-family: Fustat;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  
+  .modalContent button:hover {
+    background-color: #0E4A6C;
   }
