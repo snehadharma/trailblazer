@@ -10,7 +10,8 @@
 
 .form {
     background-color: #eef0eb;
-    margin-top: 7%;
+    margin-top: 2%;
+    top: 0;
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
