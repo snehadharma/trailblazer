@@ -8,7 +8,7 @@
 
   .profile-container {
     display: flex;
-    align-items: center;
+    align-items: space-between;
     border-radius: 100%;
   }
 
@@ -92,10 +92,10 @@
     display: flex;
     flex-direction: row;
     font-family: 'Fustat';
-    width: 80%;
+    width: 95%;
     min-height: 250px;
     background-color: #EEF0EB;
-    padding: 20px;
+    margin-bottom: 20px;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 60px;
@@ -103,9 +103,198 @@
     margin-right: auto;
   }
   .trips-title {
-    font-size: 24px;
+    font-size: 30px;
     font-family: 'Fustat';
     font-weight: bold;
     color: #AF7746; /* Orange color for the text */
     margin: 0; /* Remove margin to keep it tight */
   }
+
+  .rectangle {
+    padding: 20px;
+    padding-top: 0px;
+    display: flex;
+    background-color: #EEF0EB;
+    width: 95%;
+    height: 35vw;
+    position: relative;
+    margin: 0px 20px auto;
+    gap: 5px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.subRect{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.trip {
+    width: 25%;
+    height: 24vw;
+    background-color: rgba(175, 119, 70, 0.46);
+    border-radius: 25px;
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: all opacity 0.3s ease;
+    flex-shrink: 0;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 500px; /* Adjust as needed */
+  margin: 0 auto;
+}
+  
+.logo {
+  position: fixed;
+  width: 250px;
+  bottom: 350px;
+  right: 15%;
+  height: auto;
+}
+.img {
+  width: 120%;
+  height: auto;
+}
+
+.innerPhoto {
+width: 250px;
+height: auto;
+}
+
+.trip hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.trip::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(175, 119, 70, 0.60);
+  z-index: 1;
+  opacity: 0.4; 
+  transition: opacity 0.3s ease;
+}
+
+.trip:hover::before {
+  opacity: 1; /* Show overlay on hover */
+}
+
+
+
+.trip::after {
+  content: attr(data-description); 
+  position: absolute;
+  bottom: 10px; 
+  left: 10px; 
+  color: white;
+  font-family: Fustat;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 18px;
+  display: none;
+  z-index: 3;
+  transition: content 0.3s ease;
+}
+
+.trip:hover::after {
+  display: block; /* Show description on hover */
+}
+
+.trip {
+  cursor: pointer;
+  margin: 10px;
+}
+
+.trip img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 10; 
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 30px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 20px;
+  font-family: Fustat;
+  color: #0E4A6C;
+  border-radius: 30px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.modalContent button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #6EA2C4;
+  color: white;
+  font-family: Fustat;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.modalContent button:hover {
+  background-color: #0E4A6C;
+}
+
+.prevButton,
+.nextButton {
+position: absolute;
+top: 50%;
+background-color: #95b0c3;
+transform: translateY(-50%);
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+border: none;
+padding: 10px;
+cursor: pointer;
+border-radius: 50%;
+font-size: 18px;
+}
+
+.prevButton {
+left: 10px;
+}
+
+.nextButton {
+right: 10px;
+}
+
+.prevButton:hover,
+.nextButton:hover {
+background-color: rgba(0, 0, 0, 0.8);
+}
