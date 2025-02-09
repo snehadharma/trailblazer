@@ -75,7 +75,7 @@ function Account() {
     if (userDetails) {
       const trips = userDetails.roadTrips?.map((trip, index) => ({
         id: `ID-${index}`,  // You can adjust this ID generation logic as needed
-        Query: trip.itinerary?.[0]?.description ?? "No description available", // safely access description
+        Query: trip.itinerary?.[0]?.description ?? "Take me somewhere with wildflowers!", // safely access description
         Time: new Date().toLocaleString(), // Replace with actual time if needed
         User: userDetails.username,
         imageUrl: [texas1, texas2, texas3],  // Adjust the images as per your requirements
